@@ -1,0 +1,99 @@
+item,period,period_end,value_usd_m,xbrl_tag,form,accession_number,filed_date,note
+Total revenue,FY2021,2021-12-31,4611.856,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax,40-F,0001594805-23-000011,2023-02-16,
+Total revenue,FY2022,2022-12-31,5600.0,us-gaap:Revenues,10-K,0001594805-25-000012,2025-02-11,
+Total revenue,FY2023,2023-12-31,7060.0,us-gaap:Revenues,10-K,0001594805-26-000007,2026-02-11,
+Total revenue,FY2024,2024-12-31,8880.0,us-gaap:Revenues,10-K,0001594805-26-000007,2026-02-11,
+Total revenue,FY2025,2025-12-31,11556.0,us-gaap:Revenues,10-K,0001594805-26-000007,2026-02-11,
+Total revenue,H1 2025,2025-06-30,5040.0,us-gaap:Revenues,10-Q,0001594805-26-000047,2026-08-05,
+Total revenue,H1 2026,2026-06-30,6753.0,us-gaap:Revenues,10-Q,0001594805-26-000047,2026-08-05,
+Subscription solutions revenue,FY2021,2021-12-31,1342.334,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],40-F,0001594805-23-000011,2023-02-16,
+Subscription solutions revenue,FY2022,2022-12-31,1488.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-K,0001594805-25-000012,2025-02-11,
+Subscription solutions revenue,FY2023,2023-12-31,1837.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-K,0001594805-26-000007,2026-02-11,
+Subscription solutions revenue,FY2024,2024-12-31,2350.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-K,0001594805-26-000007,2026-02-11,
+Subscription solutions revenue,FY2025,2025-12-31,2752.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-K,0001594805-26-000007,2026-02-11,
+Subscription solutions revenue,H1 2025,2025-06-30,1276.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-Q,0001594805-26-000047,2026-08-05,
+Subscription solutions revenue,H1 2026,2026-06-30,1552.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:SubscriptionAndCirculationMember],10-Q,0001594805-26-000047,2026-08-05,
+Merchant solutions revenue,FY2021,2021-12-31,3269.522,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax[srt:ProductOrServiceAxis=us-gaap:ServiceMember],40-F,0001594805-23-000011,2023-02-16,
+Merchant solutions revenue,FY2022,2022-12-31,4112.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-K,0001594805-25-000012,2025-02-11,
+Merchant solutions revenue,FY2023,2023-12-31,5223.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-K,0001594805-26-000007,2026-02-11,
+Merchant solutions revenue,FY2024,2024-12-31,6530.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-K,0001594805-26-000007,2026-02-11,
+Merchant solutions revenue,FY2025,2025-12-31,8804.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-K,0001594805-26-000007,2026-02-11,
+Merchant solutions revenue,H1 2025,2025-06-30,3764.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-Q,0001594805-26-000047,2026-08-05,
+Merchant solutions revenue,H1 2026,2026-06-30,5201.0,us-gaap:Revenues[srt:ProductOrServiceAxis=us-gaap:ServiceMember],10-Q,0001594805-26-000047,2026-08-05,
+Gross profit,FY2021,2021-12-31,2481.144,us-gaap:GrossProfit,40-F,0001594805-23-000011,2023-02-16,
+Gross profit,FY2022,2022-12-31,2754.0,us-gaap:GrossProfit,10-K,0001594805-25-000012,2025-02-11,
+Gross profit,FY2023,2023-12-31,3515.0,us-gaap:GrossProfit,10-K,0001594805-26-000007,2026-02-11,
+Gross profit,FY2024,2024-12-31,4472.0,us-gaap:GrossProfit,10-K,0001594805-26-000007,2026-02-11,
+Gross profit,FY2025,2025-12-31,5555.0,us-gaap:GrossProfit,10-K,0001594805-26-000007,2026-02-11,
+Gross profit,H1 2025,2025-06-30,2471.0,us-gaap:GrossProfit,10-Q,0001594805-26-000047,2026-08-05,
+Gross profit,H1 2026,2026-06-30,3254.0,us-gaap:GrossProfit,10-Q,0001594805-26-000047,2026-08-05,
+Operating income,FY2021,2021-12-31,268.643,us-gaap:OperatingIncomeLoss,40-F,0001594805-23-000011,2023-02-16,
+Operating income,FY2022,2022-12-31,-822.0,us-gaap:OperatingIncomeLoss,10-K,0001594805-25-000012,2025-02-11,
+Operating income,FY2023,2023-12-31,-1418.0,us-gaap:OperatingIncomeLoss,10-K,0001594805-26-000007,2026-02-11,
+Operating income,FY2024,2024-12-31,1075.0,us-gaap:OperatingIncomeLoss,10-K,0001594805-26-000007,2026-02-11,
+Operating income,FY2025,2025-12-31,1468.0,us-gaap:OperatingIncomeLoss,10-K,0001594805-26-000007,2026-02-11,
+Operating income,H1 2025,2025-06-30,494.0,us-gaap:OperatingIncomeLoss,10-Q,0001594805-26-000047,2026-08-05,
+Operating income,H1 2026,2026-06-30,870.0,us-gaap:OperatingIncomeLoss,10-Q,0001594805-26-000047,2026-08-05,
+Stock-based compensation,FY2021,2021-12-31,330.763,us-gaap:StockOptionPlanExpense,40-F,0001594805-23-000011,2023-02-16,
+Stock-based compensation,FY2022,2022-12-31,549.0,us-gaap:StockOptionPlanExpense,10-K,0001594805-25-000012,2025-02-11,
+Stock-based compensation,FY2023,2023-12-31,615.0,us-gaap:StockOptionPlanExpense,10-K,0001594805-26-000007,2026-02-11,
+Stock-based compensation,FY2024,2024-12-31,430.0,us-gaap:StockOptionPlanExpense,10-K,0001594805-26-000007,2026-02-11,
+Stock-based compensation,FY2025,2025-12-31,449.0,us-gaap:StockOptionPlanExpense,10-K,0001594805-26-000007,2026-02-11,
+Stock-based compensation,H1 2025,2025-06-30,227.0,us-gaap:StockOptionPlanExpense,10-Q,0001594805-26-000047,2026-08-05,
+Stock-based compensation,H1 2026,2026-06-30,260.0,us-gaap:StockOptionPlanExpense,10-Q,0001594805-26-000047,2026-08-05,
+Operating cash flow,FY2021,2021-12-31,535.711,us-gaap:NetCashProvidedByUsedInOperatingActivities,40-F,0001594805-23-000011,2023-02-16,
+Operating cash flow,FY2022,2022-12-31,-136.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-K,0001594805-25-000012,2025-02-11,
+Operating cash flow,FY2023,2023-12-31,944.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-K,0001594805-26-000007,2026-02-11,
+Operating cash flow,FY2024,2024-12-31,1616.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-K,0001594805-26-000007,2026-02-11,
+Operating cash flow,FY2025,2025-12-31,2033.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-K,0001594805-26-000007,2026-02-11,
+Operating cash flow,H1 2025,2025-06-30,795.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-Q,0001594805-26-000047,2026-08-05,
+Operating cash flow,H1 2026,2026-06-30,1139.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,10-Q,0001594805-26-000047,2026-08-05,
+Capex (purchases of property & equipment),FY2021,2021-12-31,50.788,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,40-F,0001594805-23-000011,2023-02-16,
+Capex (purchases of property & equipment),FY2022,2022-12-31,50.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-K,0001594805-25-000012,2025-02-11,
+Capex (purchases of property & equipment),FY2023,2023-12-31,39.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-K,0001594805-26-000007,2026-02-11,
+Capex (purchases of property & equipment),FY2024,2024-12-31,19.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-K,0001594805-26-000007,2026-02-11,
+Capex (purchases of property & equipment),FY2025,2025-12-31,26.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-K,0001594805-26-000007,2026-02-11,
+Capex (purchases of property & equipment),H1 2025,2025-06-30,10.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-Q,0001594805-26-000047,2026-08-05,
+Capex (purchases of property & equipment),H1 2026,2026-06-30,9.0,us-gaap:PaymentsToAcquirePropertyPlantAndEquipment,10-Q,0001594805-26-000047,2026-08-05,
+Cash & equivalents,FY2021,2021-12-31,2502.992,us-gaap:CashAndCashEquivalentsAtCarryingValue,40-F,0001594805-23-000011,2023-02-16,
+Cash & equivalents,FY2022,2022-12-31,1649.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,40-F,0001594805-24-000007,2024-02-13,
+Cash & equivalents,FY2023,2023-12-31,1413.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,10-K,0001594805-25-000012,2025-02-11,
+Cash & equivalents,FY2024,2024-12-31,1498.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,10-K,0001594805-26-000007,2026-02-11,
+Cash & equivalents,FY2025,2025-12-31,1545.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,10-Q,0001594805-26-000047,2026-08-05,
+Cash & equivalents,H1 2025,2025-06-30,1542.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,10-Q,0001594805-25-000073,2025-08-06,
+Cash & equivalents,H1 2026,2026-06-30,1656.0,us-gaap:CashAndCashEquivalentsAtCarryingValue,10-Q,0001594805-26-000047,2026-08-05,
+Marketable securities,FY2021,2021-12-31,5265.101,us-gaap:MarketableSecuritiesCurrent,40-F,0001594805-23-000011,2023-02-16,Sum of components.
+Marketable securities,FY2022,2022-12-31,3404.0,us-gaap:MarketableSecuritiesCurrent,40-F,0001594805-24-000007,2024-02-13,Sum of components.
+Marketable securities,FY2023,2023-12-31,3710.0,us-gaap:MarketableSecuritiesCurrent + us-gaap:MarketableSecuritiesNoncurrent,10-K,0001594805-25-000012,2025-02-11,Sum of components.
+Marketable securities,FY2024,2024-12-31,4690.0,us-gaap:MarketableSecuritiesCurrent + us-gaap:MarketableSecuritiesNoncurrent,10-K,0001594805-26-000007,2026-02-11,Sum of components.
+Marketable securities,FY2025,2025-12-31,5208.0,us-gaap:MarketableSecuritiesCurrent + us-gaap:MarketableSecuritiesNoncurrent,10-Q,0001594805-26-000047,2026-08-05,Sum of components.
+Marketable securities,H1 2025,2025-06-30,5109.0,us-gaap:MarketableSecuritiesCurrent + us-gaap:MarketableSecuritiesNoncurrent,10-Q,0001594805-25-000073,2025-08-06,Sum of components.
+Marketable securities,H1 2026,2026-06-30,3816.0,us-gaap:MarketableSecuritiesCurrent + us-gaap:MarketableSecuritiesNoncurrent,10-Q,0001594805-26-000047,2026-08-05,Sum of components.
+Equity & other investments,FY2021,2021-12-31,3955.545,shop:DebtSecuritiesEquityAndOtherInvestments,40-F,0001594805-23-000011,2023-02-16,
+Equity & other investments,FY2022,2022-12-31,1954.0,shop:DebtSecuritiesEquityAndOtherInvestments,40-F,0001594805-24-000007,2024-02-13,
+Equity & other investments,FY2023,2023-12-31,3482.0,shop:DebtSecuritiesEquityAndOtherInvestments,10-K,0001594805-25-000012,2025-02-11,
+Equity & other investments,FY2024,2024-12-31,4647.0,shop:DebtSecuritiesEquityAndOtherInvestments,10-K,0001594805-26-000007,2026-02-11,
+Equity & other investments,FY2025,2025-12-31,4582.0,shop:DebtSecuritiesEquityAndOtherInvestments,10-Q,0001594805-26-000047,2026-08-05,
+Equity & other investments,H1 2025,2025-06-30,4405.0,shop:DebtSecuritiesEquityAndOtherInvestments,10-Q,0001594805-25-000073,2025-08-06,
+Equity & other investments,H1 2026,2026-06-30,4854.0,shop:DebtSecuritiesEquityAndOtherInvestments,10-Q,0001594805-26-000047,2026-08-05,
+Convertible notes / debt,FY2021,2021-12-31,910.963,us-gaap:ConvertibleDebtNoncurrent,40-F,0001594805-23-000011,2023-02-16,Sum of components.
+Convertible notes / debt,FY2022,2022-12-31,913.0,us-gaap:ConvertibleDebtNoncurrent,40-F,0001594805-24-000007,2024-02-13,Sum of components.
+Convertible notes / debt,FY2023,2023-12-31,916.0,us-gaap:ConvertibleDebtCurrent + us-gaap:ConvertibleDebtNoncurrent,10-K,0001594805-25-000012,2025-02-11,Sum of components.
+Convertible notes / debt,FY2024,2024-12-31,918.0,us-gaap:ConvertibleDebtCurrent + us-gaap:ConvertibleDebtNoncurrent,10-K,0001594805-26-000007;0001594805-25-000012,2026-02-11;2025-02-11,Sum of components.
+Convertible notes / debt,FY2025,2025-12-31,0.0,us-gaap:ConvertibleDebtCurrent,10-K,0001594805-26-000007,2026-02-11,Sum of components.
+Convertible notes / debt,H1 2025,2025-06-30,919.0,us-gaap:ConvertibleDebtCurrent,10-Q,0001594805-25-000073,2025-08-06,Sum of components.
+Convertible notes / debt,H1 2026,2026-06-30,,,,,,"No debt fact for 2026-06-30 in any filing; last reported us-gaap:ConvertibleDebtCurrent = 0 at 2025-12-31 (10-K 0001594805-26-000007); us-gaap:ProceedsFromConvertibleDebt = -1,043 for FY2025 (10-K 0001594805-26-000007): notes repaid/settled."
+Diluted weighted-average shares,FY2021,2021-12-31,1273.64735,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,40-F,0001594805-23-000011,2023-02-16,
+Diluted weighted-average shares,FY2022,2022-12-31,1266.268155,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-K,0001594805-25-000012,2025-02-11,
+Diluted weighted-average shares,FY2023,2023-12-31,1295.511385,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-K,0001594805-26-000007,2026-02-11,
+Diluted weighted-average shares,FY2024,2024-12-31,1301.50998,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-K,0001594805-26-000007,2026-02-11,
+Diluted weighted-average shares,FY2025,2025-12-31,1304.953255,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-K,0001594805-26-000007,2026-02-11,
+Diluted weighted-average shares,H1 2025,2025-06-30,1308.463539,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-Q,0001594805-26-000047,2026-08-05,
+Diluted weighted-average shares,H1 2026,2026-06-30,1302.627927,us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding,10-Q,0001594805-26-000047,2026-08-05,
+Shares outstanding (cover page),FY2021,2021-12-31,125.897159,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],40-F,0001594805-22-000011,2022-02-16,"Cover page as of 2021-12-31 (period end). Sum of components. WARNING: 0.10x diluted weighted shares for the same period; as reported before a later stock split, not split-adjusted."
+Shares outstanding (cover page),FY2022,2022-12-31,1275.128566,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],40-F,0001594805-23-000011,2023-02-16,Cover page as of 2022-12-31 (period end). Sum of components.
+Shares outstanding (cover page),FY2023,2023-12-31,1286.570293,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],40-F,0001594805-24-000007,2024-02-13,Cover page as of 2023-12-31 (period end). Sum of components.
+Shares outstanding (cover page),FY2024,2025-02-07,1294.820734,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],10-K,0001594805-25-000012,2025-02-11,"Cover page as of 2025-02-07, not the period end. Sum of components."
+Shares outstanding (cover page),FY2025,2026-02-06,1304.111373,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],10-K,0001594805-26-000007,2026-02-11,"Cover page as of 2026-02-06, not the period end. Sum of components."
+Shares outstanding (cover page),H1 2025,2025-08-01,1299.660749,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],10-Q,0001594805-25-000073,2025-08-06,"Cover page as of 2025-08-01, not the period end. Sum of components."
+Shares outstanding (cover page),H1 2026,2026-07-31,1286.643931,dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassAMember] + dei:EntityCommonStockSharesOutstanding[us-gaap:StatementClassOfStockAxis=us-gaap:CommonClassBMember],10-Q,0001594805-26-000047,2026-08-05,"Cover page as of 2026-07-31, not the period end. Sum of components."
