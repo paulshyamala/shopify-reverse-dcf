@@ -21,6 +21,7 @@ OUTPUT = Path(__file__).resolve().parent.parent / "model" / "shopify_reverse_dcf
 
 COL_A_WIDTH = 38
 COL_WIDTH = 13
+NOTES_WIDTH = 45
 HEADER_ROW = 4  # rows 1-2: title + description, row 3: spacer
 
 FMT_USD_M = "#,##0"
@@ -57,7 +58,7 @@ def make_named_styles():
     ]
 
 
-def setup_sheet(ws, title, n_cols, freeze_row):
+def setup_sheet(ws, title, n_cols, freeze_row=None, notes_col=None):
     """Title, description, gridlines, column widths and freeze panes."""
     ws["A1"] = title
     ws["A1"].font = Font(bold=True, size=14)
@@ -69,8 +70,11 @@ def setup_sheet(ws, title, n_cols, freeze_row):
     ws.column_dimensions["A"].width = COL_A_WIDTH
     for col in range(2, n_cols + 1):
         ws.column_dimensions[get_column_letter(col)].width = COL_WIDTH
+    if notes_col:
+        ws.column_dimensions[get_column_letter(notes_col)].width = NOTES_WIDTH
 
-    ws.freeze_panes = f"A{freeze_row}"
+    if freeze_row:
+        ws.freeze_panes = f"A{freeze_row}"
 
 
 def header_row(ws, row, labels, n_cols=None):
@@ -111,10 +115,9 @@ def build_inputs(ws):
             sample_cell.number_format = FMT_USD_M
         ws.cell(row=row, column=3, value=meaning)
 
-    # Input table, frozen below its header
+    # Input table
     row += 2
     header_row(ws, row, ["Input", "Value", "Units / notes"])
-    freeze_row = row + 1
 
     groups = [
         ("Market", [
@@ -161,7 +164,8 @@ def build_inputs(ws):
                 ws.add_data_validation(dv)
                 dv.add(value_cell)
 
-    setup_sheet(ws, "Inputs", n_cols, freeze_row)
+    # No freeze panes here: the legend above the table would eat the screen
+    setup_sheet(ws, "Inputs", n_cols, notes_col=3)
 
 
 def build_historicals(ws):
@@ -227,7 +231,7 @@ def build_historicals(ws):
                 cell.style = "Formula" if is_derived or col == ttm_col else "Input"
                 cell.number_format = FMT_PCT if is_ratio else FMT_USD_M
 
-    setup_sheet(ws, "Historicals", n_cols, HEADER_ROW + 1)
+    setup_sheet(ws, "Historicals", n_cols, HEADER_ROW + 1, notes_col=n_cols)
 
 
 def build_placeholder(ws, title):
