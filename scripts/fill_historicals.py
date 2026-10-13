@@ -4,12 +4,15 @@ Opens model/shopify_reverse_dcf.xlsx in place (never rebuilds it), so styles,
 data validation and layout are preserved. Rows are matched by their label in
 column A and columns by the header row.
 
+Never overwrites: only empty cells are written, so values, comments and
+formulas already in the workbook (including hand edits) are kept. A value that
+differs from the CSV is reported, not replaced.
+
 - Hardcoded values get the Input style and a source comment.
-- Input cells with no value get the ToFill style; a value typed by hand is
-  never overwritten by a blank.
-- GMV and MRR are left for manual entry.
+- Input cells with no value get the ToFill style.
+- GMV is left for manual entry (see scripts/pull_gmv.py); MRR is unused.
 - Free cash flow and the TTM column are live formulas (Formula style).
-- The Ratios section is not touched.
+- The Ratios section and the MRR row are not touched.
 
 Usage:
     python scripts/fill_historicals.py
@@ -35,7 +38,8 @@ TTM_COL = "TTM Jun-26"
 # Rows whose TTM is FY2025 + H1 2026 - H1 2025; the rest use the H1 2026 value
 FLOW_SECTIONS = {"Income statement", "Cash flow"}
 FLOW_KPIS = {"GMV"}
-MANUAL_ROWS = ["GMV", "MRR"]
+MANUAL_ROWS = ["GMV"]
+UNUSED_ROWS = {"MRR"}  # kept so formula references don't shift; never written
 FCF_ROW = "Free cash flow"
 OCF_ROW = "Operating cash flow"
 CAPEX_ROW = "Capex (purchases of property & equipment)"
@@ -96,11 +100,17 @@ def main():
         sys.exit(f"Workbook layout mismatch. Rows not found: {sorted(missing_rows)}; "
                  f"columns not found: {sorted(missing_cols)}")
 
-    written, to_fill = [], []
+    written, kept, to_fill = [], 0, []
 
-    # 1. Hardcoded XBRL values
+    # 1. Hardcoded XBRL values, into empty cells only
     for d in data:
         cell = ws.cell(rows[d["item"]][0], cols[d["period"]])
+        if cell.value is not None:
+            kept += 1
+            if d["value_usd_m"] and cell.value != float(d["value_usd_m"]):
+                print(f"  KEPT {cell.coordinate} {d['item']} | {d['period']}: workbook has "
+                      f"{cell.value}, CSV has {d['value_usd_m']} (not overwritten)")
+            continue
         if d["value_usd_m"]:
             cell.value = float(d["value_usd_m"])
             set_style(cell, "Input")
@@ -110,12 +120,13 @@ def main():
                 text += f"\nNote: {d['note']}"
             cell.comment = comment(text)
             written.append(d)
-        elif cell.value is None:
+        else:
             set_style(cell, "ToFill")
-            cell.comment = comment(f"Not in XBRL. {d['note']}") if d["note"] else None
+            if d["note"] and cell.comment is None:
+                cell.comment = comment(f"Not in XBRL. {d['note']}")
             to_fill.append((d["item"], d["period"], d["note"]))
 
-    # 2. Manual KPI rows: ToFill unless already typed in
+    # 2. Manual KPI rows: ToFill unless already filled
     for label in MANUAL_ROWS:
         for period in PERIOD_COLS:
             cell = ws.cell(rows[label][0], cols[period])
@@ -123,40 +134,50 @@ def main():
                 set_style(cell, "ToFill")
                 to_fill.append((label, period, "Non-GAAP KPI, not in XBRL: enter by hand."))
 
-    # 3. Formulas: FCF per period, then the TTM column
+    # 3. Formulas, into empty cells only: FCF per period, then the TTM column
+    def put_formula(cell, formula):
+        nonlocal kept
+        if cell.value is not None:
+            kept += 1
+            return
+        cell.value = formula
+        set_style(cell, "Formula")
+
     ocf, capex = rows[OCF_ROW][0], rows[CAPEX_ROW][0]
     for period in PERIOD_COLS:
-        c = cols[period]
-        cell = ws.cell(rows[FCF_ROW][0], c)
-        cell.value = f"={letter[period]}{ocf}-{letter[period]}{capex}"
-        set_style(cell, "Formula")
-        cell.comment = None
+        put_formula(ws.cell(rows[FCF_ROW][0], cols[period]),
+                    f"={letter[period]}{ocf}-{letter[period]}{capex}")
 
     fy, h1_prev, h1_cur = letter["FY2025"], letter["H1 2025"], letter["H1 2026"]
     for label, (r, section) in rows.items():
-        if section in SKIP_SECTIONS:
+        if section in SKIP_SECTIONS or label in UNUSED_ROWS:
             continue
-        cell = ws.cell(r, cols[TTM_COL])
         if section in FLOW_SECTIONS or label in FLOW_KPIS:
-            cell.value = f"={fy}{r}+{h1_cur}{r}-{h1_prev}{r}"
+            put_formula(ws.cell(r, cols[TTM_COL]), f"={fy}{r}+{h1_cur}{r}-{h1_prev}{r}")
         else:
-            cell.value = f"={h1_cur}{r}"
-        set_style(cell, "Formula")
+            put_formula(ws.cell(r, cols[TTM_COL]), f"={h1_cur}{r}")
 
     wb.save(WORKBOOK)
-    print(f"Wrote {len(written)} values + formulas to {WORKBOOK.relative_to(ROOT)} [{SHEET}]")
+    print(f"Wrote {len(written)} values to {WORKBOOK.relative_to(ROOT)} [{SHEET}]; "
+          f"kept {kept} cells that already had content")
 
-    report(data, written, to_fill, rows, cols)
+    report(data, to_fill, rows, cols)
 
 
-def report(data, written, to_fill, rows, cols):
-    values = {(d["item"], d["period"]): float(d["value_usd_m"]) for d in data if d["value_usd_m"]}
-
-    # Re-open and check the workbook still loads, with our styles in place
+def report(data, to_fill, rows, cols):
+    # Re-open and report what the workbook now holds (hardcoded numbers only)
     wb = load_workbook(WORKBOOK)
     ws = wb[SHEET]
-    styles = {ws.cell(rows[d["item"]][0], cols[d["period"]]).style for d in written}
-    print(f"Re-opened OK. Styles on hardcoded cells: {styles}. "
+    items = list(dict.fromkeys(d["item"] for d in data)) + MANUAL_ROWS
+    values = {}
+    for item in items:
+        for p in PERIOD_COLS:
+            v = ws.cell(rows[item][0], cols[p]).value
+            if isinstance(v, (int, float)):
+                values[(item, p)] = float(v)
+    hardcoded = [d for d in data if (d["item"], d["period"]) in values and d["value_usd_m"]]
+    styles = {ws.cell(rows[d["item"]][0], cols[d["period"]]).style for d in hardcoded}
+    print(f"Re-opened OK. Styles on XBRL cells: {styles}. "
           f"Inputs data validations: {len(wb['Inputs'].data_validations.dataValidation)}")
 
     print("\n== Validation")
@@ -171,10 +192,9 @@ def report(data, written, to_fill, rows, cols):
         print(f"  {item} {period}: {got:,.0f} ({how}) vs reported {expected:,} -> {diff:+.2%} {flag}")
 
     print("\n== Historicals (USD m; shares in m). FCF = OCF - capex, as in the formula")
-    items = list(dict.fromkeys(d["item"] for d in data))
     items.insert(items.index(CAPEX_ROW) + 1, FCF_ROW)
     print(f"  {'':42}" + "".join(f"{p:>10}" for p in PERIOD_COLS))
-    for item in items + MANUAL_ROWS:
+    for item in items:
         cells = []
         for p in PERIOD_COLS:
             if item == FCF_ROW and (OCF_ROW, p) in values and (CAPEX_ROW, p) in values:
@@ -185,7 +205,7 @@ def report(data, written, to_fill, rows, cols):
         print(f"  {item:42}" + "".join(cells))
 
     print("\n== 5 random hardcoded cells to spot-check")
-    for d in random.sample(written, 5):
+    for d in random.sample(hardcoded, min(5, len(hardcoded))):
         accn = d["accession_number"].split(";")[0]
         url = ARCHIVE_URL.format(nodash=accn.replace("-", ""), accn=accn)
         print(f"  {d['item']} | {d['period']} | {float(d['value_usd_m']):,.3f} | "
