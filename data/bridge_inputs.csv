@@ -1,0 +1,7 @@
+item,period,period_end,value_m,xbrl_tag,line_item,form,accession_number,filed_date
+Flexport equity-method investment,FY2025,2025-12-31,602.0,us-gaap:EquityMethodInvestments,Balance sheet: Equity method investment,10-Q,0001594805-26-000047,2026-08-05
+Flexport equity-method investment,H1 2026,2026-06-30,559.0,us-gaap:EquityMethodInvestments,Balance sheet: Equity method investment,10-Q,0001594805-26-000047,2026-08-05
+Basic weighted-average shares,H1 2026,2026-06-30,1299.266611,us-gaap:WeightedAverageNumberOfSharesOutstandingBasic,"Income statement: weighted average shares, basic",10-Q,0001594805-26-000047,2026-08-05
+Interest income,FY2025,2025-12-31,331.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-K,0001594805-26-000007,2026-02-11
+Interest income,H1 2025,2025-06-30,171.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-Q,0001594805-26-000047,2026-08-05
+Interest income,H1 2026,2026-06-30,141.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-Q,0001594805-26-000047,2026-08-05
