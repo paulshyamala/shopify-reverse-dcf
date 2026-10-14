@@ -30,12 +30,13 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
+from sec_env import sec_user_agent
+
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 OUT_CSV = ROOT / "data" / "historicals.csv"
 
 CIK = "0001594805"
-USER_AGENT = "REDACTED"
 COMPANYFACTS_URL = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{CIK}.json"
 SUBMISSIONS_URL = f"https://data.sec.gov/submissions/CIK{CIK}.json"
 ARCHIVE_URL = f"https://www.sec.gov/Archives/edgar/data/{int(CIK)}/{{accn}}"
@@ -124,7 +125,7 @@ CSV_FIELDS = ["item", "period", "period_end", "value_usd_m", "xbrl_tag", "form",
 def fetch(url, path, refresh):
     if path.exists() and not refresh:
         return path.read_bytes()
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(url, headers={"User-Agent": sec_user_agent()})
     with urllib.request.urlopen(req) as resp:
         data = resp.read()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -328,6 +329,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--refresh", action="store_true", help="re-download cached SEC data")
     args = parser.parse_args()
+    sec_user_agent()  # fail fast if the SEC contact is not configured
 
     print("== Loading SEC data")
     companyfacts = json.loads(fetch(COMPANYFACTS_URL, RAW / "companyfacts.json", args.refresh))

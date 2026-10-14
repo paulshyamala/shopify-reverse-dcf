@@ -20,11 +20,12 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
+from sec_env import sec_user_agent
+
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "data" / "raw" / "docs"
 OUT_CSV = ROOT / "data" / "gmv.csv"
 
-USER_AGENT = "REDACTED"
 DOC_URL = "https://www.sec.gov/Archives/edgar/data/1594805/{nodash}/{doc}"
 
 SECTION = "Key Performance Indicators"
@@ -92,7 +93,7 @@ def doc_lines(accn, refresh):
     path = DOCS / accn / doc
     if refresh or not path.exists():
         url = DOC_URL.format(nodash=accn.replace("-", ""), doc=doc)
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        req = urllib.request.Request(url, headers={"User-Agent": sec_user_agent()})
         with urllib.request.urlopen(req) as resp:
             data = resp.read()
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -151,6 +152,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--refresh", action="store_true", help="re-download filing documents")
     args = parser.parse_args()
+    sec_user_agent()  # fail fast if the SEC contact is not configured
 
     tables = {}
     for accn in FILINGS:
