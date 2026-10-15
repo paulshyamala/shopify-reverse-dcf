@@ -2,6 +2,16 @@
 
 Every judgment call in the model, with the reasoning. Feeds the memo.
 
+## Summary of key decisions
+
+**Discount rate: 10.4%.** Shopify has no debt, so its WACC equals its cost of equity. Using CAPM: 5.21% risk-free rate + 1.25 software-industry beta × 4.14% equity risk premium. I use an industry beta rather than Shopify's raw 2.62, which is inflated by the 2021–23 drawdown and reflects a loss-making business that no longer exists. Sensitivity analysis covers 8–14%.
+
+**Stock-based compensation: treated as a real cost.** Employees are paid partly in shares, which dilutes existing owners, but reported free cash flow adds it back. I subtract it at 4% of revenue and use today's diluted share count, with no additional future dilution. Buybacks are not also subtracted, to avoid double-counting.
+
+**Non-operating assets: +$9.8B.** Cash and marketable securities ($5.5B) at full value; strategic equity stakes and Flexport ($5.4B) at 80% to reflect tax on gains and limited liquidity. No debt. Equity value is divided by 1,290m diluted shares.
+
+**Starting margin: 12.4%, not 17.7%.** Reported FCF margin is 17.7%. Subtracting SBC (3.6% of revenue) and after-tax interest on the cash pile (1.7%), which is already counted in the equity bridge, leaves 12.4% as the operating business's cash margin for owners.
+
 ## 1. Discount rate (WACC): 10.39%
 *Decided: 2026-10-14*
 
@@ -19,8 +29,8 @@ Every judgment call in the model, with the reasoning. Feeds the memo.
 | Adjusted beta | 13.84% |
 | **Industry beta (base case)** | **10.39%** |
 
-**Rationale (draft, rewrite in my own words):**
-I use a WACC of 10.4%, equal to Shopify's cost of equity since it carries no debt after settling its convertible notes in November 2025. I estimate it with CAPM using a bottom-up software-industry beta of 1.25 (Damodaran) rather than Shopify's raw 5-year beta of 2.62, which is inflated by the 2021–23 drawdown and reflects a loss-making, logistics-heavy business that no longer exists. Because the beta choice alone moves the cost of equity from 10.4% to 16.1%, I test WACC from 8% to 14% in the sensitivity analysis, with the adjusted-beta case (13.8%) as the conservative view.
+**Rationale:**
+I discount at 10.39%, which is simply Shopify's cost of equity, because the company has had no debt since settling its convertible notes in November 2025. I estimate it with CAPM (the risk-free rate plus beta, a stock's sensitivity to market swings, times the equity risk premium), using Damodaran's 1.25 beta for US software companies instead of Shopify's own 5-year beta of 2.62, which is distorted by the 2021–23 crash and by the loss-making, logistics-heavy business Shopify has since exited. The beta choice alone moves the cost of equity from 10.39% to 16.06%, so I test WACC from 8% to 14% in the sensitivity analysis and treat the adjusted-beta case (13.84%) as the conservative view.
 
 ## 2. SBC treatment: subtract (base case)
 *Decided: 2026-10-14*
@@ -32,8 +42,8 @@ I use a WACC of 10.4%, equal to Shopify's cost of equity since it carries no deb
 - Buybacks are **not** subtracted as well; that would double-count, since buybacks partly offset SBC dilution.
 - Toggle on Inputs (`subtract` / `ignore`) shows the value without the adjustment. "Ignore" overstates value unless dilution is modelled separately.
 
-**Rationale (draft, rewrite in my own words):**
-I treat stock-based compensation as a real cost. It's paid in shares rather than cash, but it dilutes existing shareholders just as surely, and reported free cash flow adds it back. Subtracting it at 4% of revenue lowers Shopify's starting FCF margin from 17.7% to 14.1%, and I show the unadjusted value as a sensitivity.
+**Rationale:**
+I treat stock-based compensation (SBC: pay in shares rather than cash) as a real cost, because it dilutes existing owners even though reported free cash flow adds it back as a non-cash item. Over the last twelve months, subtracting SBC of $482M (3.6% of revenue) cuts the FCF margin from 17.7% to 14.1%, and I forecast SBC at 4.0% of revenue from here. The `ignore` setting on Inputs shows the value without this adjustment, which overstates value unless future dilution is modelled separately.
 
 ## 3. Non-operating assets and share count (equity bridge)
 *Decided: 2026-10-14. Balance sheet as of Jun 30 2026 (Jun-2026 10-Q).*
@@ -49,11 +59,25 @@ I treat stock-based compensation as a real cost. It's paid in shares rather than
 | Debt | 0 | Convertible notes settled Nov 2025 |
 | **Net non-operating assets** | **9,802** | Added to EV in the equity bridge |
 
-- **Haircut 20%** on investments only, not on cash: tax on any gains when sold, a block discount on large public stakes, and valuation uncertainty on the private Flexport stake. Cash and Treasury-type securities count at full value.
+- **Haircut 20%** on investments only, not on cash: tax on any gains when sold, a block discount on large public stakes, and valuation uncertainty on the private Flexport stake. Cash and marketable debt securities count at full value.
 - **Diluted shares 1,290.0m** = cover-page basic shares 1,286.6m (Jul 31 2026) + 3.4m option/RSU dilution (H1 2026 diluted weighted 1,302.6m − basic weighted 1,299.3m, treasury-stock method). No extra future dilution, since SBC is subtracted as a cost (§2).
 - **Market cap $222.5B** ($172.50 × 1,290.0m) − net non-operating assets $9.8B = **implied enterprise value $212.7B**, what the market pays for the operating business.
 - **Interest income:** TTM $301M pre-tax ("Interest income" on marketable securities: FY2025 331 + H1 2026 141 − H1 2025 171), **$226M after 25% tax = 12.1% of TTM FCF − SBC** ($1,870M). It flows through reported FCF, so counting it in FCF *and* adding the cash that earns it would double-count.
-- **Recommendation: (b).** Interest is ≥ 5% of TTM FCF − SBC, so strip after-tax interest income out of the starting FCF margin in the DCF (~$226M, about 1.7 points of TTM revenue), and keep cash & securities in the bridge.
+- **Adopted: (b).** Interest is ≥ 5% of TTM FCF − SBC, so after-tax interest income (~$226M, about 1.7 points of TTM revenue) is stripped out of the starting FCF margin (Inputs, "Starting operating FCF margin"; see §4), and cash & securities stay in the bridge.
 
-**Rationale (draft, rewrite in my own words):**
-I add $9.8B of net non-operating assets to the value of the operating business: Shopify's $5.5B of cash and securities at full value, plus its $5.4B of strategic stakes (Affirm, Global-E, Klaviyo and Flexport) after a 20% haircut for tax, block discounts and the uncertain value of the private Flexport stake. Because reported free cash flow already includes about $226M a year of after-tax interest earned on that cash, I strip it out of the starting FCF margin so the cash isn't counted twice. Dividing by 1,290M diluted shares, which includes in-the-money options and RSUs, the $222.5B market cap implies the market is paying about $212.7B for the operating business.
+**Rationale:**
+I add $9.8B of net non-operating assets (what Shopify owns outside its operating business, less debt) to the value of the operations: $5.5B of cash and marketable securities at full value, plus $5.4B of stakes in Affirm, Global-E, Klaviyo, Flexport and others, counted at 80% ($4.3B) for tax on gains, block discounts and the hard-to-value private Flexport stake. Reported free cash flow already includes about $226M a year of after-tax interest on that cash, so I strip it out of the starting margin to avoid counting the cash twice. At $172.50 a share and 1,290.0M diluted shares (including in-the-money options and RSUs), the $222.5B market cap means investors are paying about $212.7B for the operating business, its implied enterprise value.
+
+## 4. Starting point: TTM to Jun 30 2026
+*Decided: 2026-10-14*
+
+| | $M | % of revenue |
+|---|---|---|
+| Revenue | 13,269 | |
+| Reported FCF | 2,352 | 17.7% |
+| − SBC | 482 | 3.6% |
+| − After-tax interest income | 226 | 1.7% |
+| **Operating FCF (owners' cash, ex-interest)** | **1,644** | **12.4%** |
+
+**Rationale:**
+I start the forecast from the twelve months to Jun 30 2026 (TTM), the most recent full year of results. The reported 17.7% free cash flow margin overstates what the operating business earns for owners: SBC is a real cost paid in shares, and the interest earned on Shopify's ~$5.5B of cash is already valued separately in the equity bridge. Stripping both out leaves a 12.4% operating FCF margin, which is where the DCF starts before ramping to the terminal margin.
