@@ -1,0 +1,72 @@
+item,period,period_end,value_m,xbrl_tag,member,form,accession_number,filed_date
+"Loans and MCAs, net: current",FY2021,2021-12-31,470.722,us-gaap:NotesAndLoansReceivableNetCurrent,,40-F,0001594805-23-000011,2023-02-16
+"Loans and MCAs, net: current",FY2022,2022-12-31,580.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-K,0001594805-25-000012,2025-02-11
+"Loans and MCAs, net: current",FY2023,2023-12-31,816.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-K,0001594805-26-000007,2026-02-11
+"Loans and MCAs, net: current",FY2024,2024-12-31,1224.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-K,0001594805-26-000007,2026-02-11
+"Loans and MCAs, net: current",FY2025,2025-12-31,1784.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-Q,0001594805-26-000047,2026-08-05
+"Loans and MCAs, net: current",H1 2025,2025-06-30,1597.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-Q,0001594805-25-000073,2025-08-06
+"Loans and MCAs, net: current",H1 2026,2026-06-30,2184.0,us-gaap:NotesAndLoansReceivableNetCurrent,,10-Q,0001594805-26-000047,2026-08-05
+Allowance for credit losses: loans,FY2021,2021-12-31,3.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,40-F,0001594805-24-000007,2024-02-13
+Allowance for credit losses: loans,FY2022,2022-12-31,19.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,10-K,0001594805-25-000012,2025-02-11
+Allowance for credit losses: loans,FY2023,2023-12-31,60.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,10-K,0001594805-26-000007,2026-02-11
+Allowance for credit losses: loans,FY2024,2024-12-31,110.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,10-Q,0001594805-26-000019,2026-05-05
+Allowance for credit losses: loans,FY2025,2025-12-31,160.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,10-Q,0001594805-26-000019,2026-05-05
+Allowance for credit losses: loans,H1 2025,2025-06-30,138.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,10-Q,0001594805-25-000089,2025-11-04
+Allowance for credit losses: loans,H1 2026,2026-06-30,,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,FinanceReceivablesMember,,,
+Allowance for credit losses: MCAs,FY2021,2021-12-31,38.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,40-F,0001594805-24-000007,2024-02-13
+Allowance for credit losses: MCAs,FY2022,2022-12-31,49.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,10-K,0001594805-25-000012,2025-02-11
+Allowance for credit losses: MCAs,FY2023,2023-12-31,36.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,10-K,0001594805-26-000007,2026-02-11
+Allowance for credit losses: MCAs,FY2024,2024-12-31,31.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,10-Q,0001594805-26-000019,2026-05-05
+Allowance for credit losses: MCAs,FY2025,2025-12-31,35.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,10-Q,0001594805-26-000019,2026-05-05
+Allowance for credit losses: MCAs,H1 2025,2025-06-30,31.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,10-Q,0001594805-25-000089,2025-11-04
+Allowance for credit losses: MCAs,H1 2026,2026-06-30,,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,MerchantCashAdvancesMember,,,
+Allowance for credit losses (total),FY2021,2021-12-31,,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,,,
+Allowance for credit losses (total),FY2022,2022-12-31,,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,,,
+Allowance for credit losses (total),FY2023,2023-12-31,,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,,,
+Allowance for credit losses (total),FY2024,2024-12-31,141.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,10-Q,0001594805-26-000047,2026-08-05
+Allowance for credit losses (total),FY2025,2025-12-31,195.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,10-Q,0001594805-26-000047,2026-08-05
+Allowance for credit losses (total),H1 2025,2025-06-30,169.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,10-Q,0001594805-26-000047,2026-08-05
+Allowance for credit losses (total),H1 2026,2026-06-30,242.0,us-gaap:AllowanceForNotesAndLoansReceivableCurrent,,10-Q,0001594805-26-000047,2026-08-05
+"Write-offs, net of recoveries: loans",FY2021,2021-12-31,2.25,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,40-F,0001594805-23-000011,2023-02-16
+"Write-offs, net of recoveries: loans",FY2022,2022-12-31,5.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,40-F,0001594805-24-000007,2024-02-13
+"Write-offs, net of recoveries: loans",FY2023,2023-12-31,19.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,10-K,0001594805-25-000012,2025-02-11
+"Write-offs, net of recoveries: loans",FY2024,2024-12-31,58.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,10-K,0001594805-26-000007,2026-02-11
+"Write-offs, net of recoveries: loans",FY2025,2025-12-31,103.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,10-K,0001594805-26-000007,2026-02-11
+"Write-offs, net of recoveries: loans",H1 2025,2025-06-30,44.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,10-Q,0001594805-25-000073,2025-08-06
+"Write-offs, net of recoveries: loans",H1 2026,2026-06-30,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,FinanceReceivablesMember,,,
+"Write-offs, net of recoveries: MCAs",FY2021,2021-12-31,14.271,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,40-F,0001594805-23-000011,2023-02-16
+"Write-offs, net of recoveries: MCAs",FY2022,2022-12-31,32.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,40-F,0001594805-24-000007,2024-02-13
+"Write-offs, net of recoveries: MCAs",FY2023,2023-12-31,33.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,10-K,0001594805-25-000012,2025-02-11
+"Write-offs, net of recoveries: MCAs",FY2024,2024-12-31,18.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,10-K,0001594805-26-000007,2026-02-11
+"Write-offs, net of recoveries: MCAs",FY2025,2025-12-31,28.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,10-K,0001594805-26-000007,2026-02-11
+"Write-offs, net of recoveries: MCAs",H1 2025,2025-06-30,16.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,10-Q,0001594805-25-000073,2025-08-06
+"Write-offs, net of recoveries: MCAs",H1 2026,2026-06-30,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,MerchantCashAdvancesMember,,,
+"Write-offs, net of recoveries (total)",FY2021,2021-12-31,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,,,
+"Write-offs, net of recoveries (total)",FY2022,2022-12-31,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,,,
+"Write-offs, net of recoveries (total)",FY2023,2023-12-31,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,,,
+"Write-offs, net of recoveries (total)",FY2024,2024-12-31,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,,,
+"Write-offs, net of recoveries (total)",FY2025,2025-12-31,,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,,,
+"Write-offs, net of recoveries (total)",H1 2025,2025-06-30,60.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,10-Q,0001594805-26-000047,2026-08-05
+"Write-offs, net of recoveries (total)",H1 2026,2026-06-30,107.0,us-gaap:FinancingReceivableAllowanceForCreditLossWriteoffAfterRecovery,,10-Q,0001594805-26-000047,2026-08-05
+Provision for credit losses: loans,FY2021,2021-12-31,2.54,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,40-F,0001594805-23-000011,2023-02-16
+Provision for credit losses: loans,FY2022,2022-12-31,21.0,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,40-F,0001594805-24-000007,2024-02-13
+Provision for credit losses: loans,FY2023,2023-12-31,60.0,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,10-K,0001594805-25-000012,2025-02-11
+Provision for credit losses: loans,FY2024,2024-12-31,108.0,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,10-K,0001594805-26-000007,2026-02-11
+Provision for credit losses: loans,FY2025,2025-12-31,153.0,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,10-K,0001594805-26-000007,2026-02-11
+Provision for credit losses: loans,H1 2025,2025-06-30,72.0,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,10-Q,0001594805-25-000073,2025-08-06
+Provision for credit losses: loans,H1 2026,2026-06-30,,us-gaap:ProvisionForLoanLossesExpensed,FinanceReceivablesMember,,,
+Provision for credit losses: MCAs,FY2021,2021-12-31,36.719,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,40-F,0001594805-23-000011,2023-02-16
+Provision for credit losses: MCAs,FY2022,2022-12-31,43.0,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,40-F,0001594805-24-000007,2024-02-13
+Provision for credit losses: MCAs,FY2023,2023-12-31,20.0,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,10-K,0001594805-25-000012,2025-02-11
+Provision for credit losses: MCAs,FY2024,2024-12-31,13.0,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,10-K,0001594805-26-000007,2026-02-11
+Provision for credit losses: MCAs,FY2025,2025-12-31,32.0,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,10-K,0001594805-26-000007,2026-02-11
+Provision for credit losses: MCAs,H1 2025,2025-06-30,16.0,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,10-Q,0001594805-25-000073,2025-08-06
+Provision for credit losses: MCAs,H1 2026,2026-06-30,,us-gaap:ProvisionForLoanLossesExpensed,MerchantCashAdvancesMember,,,
+Provision for credit losses (total),FY2021,2021-12-31,,us-gaap:ProvisionForLoanLossesExpensed,,,,
+Provision for credit losses (total),FY2022,2022-12-31,,us-gaap:ProvisionForLoanLossesExpensed,,,,
+Provision for credit losses (total),FY2023,2023-12-31,,us-gaap:ProvisionForLoanLossesExpensed,,,,
+Provision for credit losses (total),FY2024,2024-12-31,,us-gaap:ProvisionForLoanLossesExpensed,,,,
+Provision for credit losses (total),FY2025,2025-12-31,,us-gaap:ProvisionForLoanLossesExpensed,,,,
+Provision for credit losses (total),H1 2025,2025-06-30,88.0,us-gaap:ProvisionForLoanLossesExpensed,,10-Q,0001594805-26-000047,2026-08-05
+Provision for credit losses (total),H1 2026,2026-06-30,154.0,us-gaap:ProvisionForLoanLossesExpensed,,10-Q,0001594805-26-000047,2026-08-05
+"Total revenue, H1 2024",H1 2024,2024-06-30,3906.0,us-gaap:Revenues,,10-Q,0001594805-25-000073,2025-08-06

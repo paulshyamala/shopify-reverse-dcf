@@ -13,6 +13,7 @@
 - Excel can't recalculate here: validate by evaluating formulas in Python and printing results.
 - After every change, diff the workbook before vs after and confirm only the intended cells changed.
 - Every hardcoded number needs a source (note or cell comment).
+- Notes and labels must never start with '=' (openpyxl stores them as formulas, and Excel then repairs the file).
 
 ## Data
 - SEC User-Agent comes from `SEC_USER_AGENT` in `.env` (gitignored). Never hardcode it.

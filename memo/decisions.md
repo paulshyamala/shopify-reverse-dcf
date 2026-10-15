@@ -10,7 +10,7 @@ Every judgment call in the model, with the reasoning. Feeds the memo.
 
 **Non-operating assets: +$9.8B.** Cash and marketable securities ($5.5B) at full value; strategic equity stakes and Flexport ($5.4B) at 80% to reflect tax on gains and limited liquidity. No debt. Equity value is divided by 1,290m diluted shares.
 
-**Starting margin: 12.4%, not 17.7%.** Reported FCF margin is 17.7%. Subtracting SBC (3.6% of revenue) and after-tax interest on the cash pile (1.7%), which is already counted in the equity bridge, leaves 12.4% as the operating business's cash margin for owners.
+**Cash flow: FCFF built from EBIT, with the loan book as reinvestment.** The DCF values free cash flow to the firm: EBIT (which already deducts SBC and Shopify Capital loan losses, and excludes interest income) after a tax rate rising from 19% to 24%, plus D&A, minus capex, working capital and growth in the Shopify Capital loan book. The loan book grows by 20% of each revenue increase, the largest reinvestment in the model and one that reported free cash flow leaves out, because loans sit in investing cash flow. The reported 17.7% FCF margin and the adjusted 12.4% margin are kept for reference only.
 
 ## 1. Discount rate (WACC): 10.39%
 *Decided: 2026-10-14*
@@ -69,7 +69,7 @@ I treat stock-based compensation (SBC: pay in shares rather than cash) as a real
 I add $9.8B of net non-operating assets (what Shopify owns outside its operating business, less debt) to the value of the operations: $5.5B of cash and marketable securities at full value, plus $5.4B of stakes in Affirm, Global-E, Klaviyo, Flexport and others, counted at 80% ($4.3B) for tax on gains, block discounts and the hard-to-value private Flexport stake. Reported free cash flow already includes about $226M a year of after-tax interest on that cash, so I strip it out of the starting margin to avoid counting the cash twice. At $172.50 a share and 1,290.0M diluted shares (including in-the-money options and RSUs), the $222.5B market cap means investors are paying about $212.7B for the operating business, its implied enterprise value.
 
 ## 4. Starting point: TTM to Jun 30 2026
-*Decided: 2026-10-14*
+*Decided: 2026-10-14. Superseded on 2026-10-15 by the FCFF build (§5); kept for reference.*
 
 | | $M | % of revenue |
 |---|---|---|
@@ -81,3 +81,49 @@ I add $9.8B of net non-operating assets (what Shopify owns outside its operating
 
 **Rationale:**
 I start the forecast from the twelve months to Jun 30 2026 (TTM), the most recent full year of results. The reported 17.7% free cash flow margin overstates what the operating business earns for owners: SBC is a real cost paid in shares, and the interest earned on Shopify's ~$5.5B of cash is already valued separately in the equity bridge. Stripping both out leaves a 12.4% operating FCF margin, which is where the DCF starts before ramping to the terminal margin.
+
+## 5. Forecast assumptions (FCFF build)
+*Decided: 2026-10-15*
+
+FCFF = EBIT × (1 − tax rate) + D&A − capex − working capital investment − loan book investment (+ SBC only if the SBC toggle is set to `ignore`). Ten forecast years (Jul 2026–Jun 2036) plus a terminal year; all assumptions live on Inputs, "DCF assumptions".
+
+| Assumption | Value | Basis / source |
+|---|---|---|
+| TTM GMV | 432,164 | Historicals, TTM Jun-26 |
+| TTM take rate | 3.07% | Starting revenue 13,269 / TTM GMV |
+| TTM EBIT | 1,844 | Historicals operating income, TTM Jun-26 |
+| TTM EBIT margin | 13.9% | TTM EBIT / starting revenue |
+| GMV growth, year 1 | 29.0% | H1 2026 GMV +33%; Q3 2026 revenue guidance low-30s |
+| GMV growth, year 10 | 7.0% | ~2× long-run nominal GDP; linear fade from year 1 |
+| Take rate increase per year | 0.02% | History: 2.63% (FY21) → 3.12% (H1 26) |
+| Terminal EBIT margin (year 10) | 25.0% | Linear ramp from TTM. Opex ~34% → ~23% of revenue; PayPal GAAP 18.3% (FY25) |
+| Tax rate, year 1 | 19.0% | Effective rate: FY25 18.4%, H1 26 19.3% |
+| Tax rate, year 10 | 24.0% | Rises as loss carryforwards/credits run out; cash taxes 27 → 347 (FY22 → TTM) |
+| D&A % of revenue | 0.2% | TTM 29 / 13,269 |
+| Capex % of revenue | 0.2% | TTM 25 / 13,269 |
+| Working capital % of revenue increase | 4.0% | FY25 4.4%, H1 26 4.1% |
+| Loan book % of revenue increase | 20.0% | Δ net loan book ÷ Δ revenue: FY23 16.2%, FY24 22.4%, FY25 20.9% |
+| Terminal growth rate | 3.0% | Below Fed long-run nominal GDP (~4%: 2.0% real + 2.0% PCE, SEP Sep 2026) |
+
+**Rationale:**
+I build free cash flow to the firm from EBIT rather than starting from reported free cash flow, because EBIT already charges the two costs reported FCF adds back, stock-based compensation and Shopify Capital loan losses, and it leaves out interest income, which the cash is credited for separately in the equity bridge. Reported FCF also omits Shopify's largest reinvestment: loans to merchants sit in investing cash flow, yet the loan book has been growing by about 20 cents for every extra dollar of revenue. Modelling that reinvestment explicitly, alongside working capital, capex and a tax rate that rises as tax shields run out, gives a cash flow that reflects what the business actually leaves for its owners.
+
+## 6. Base-case result
+*Model as of 2026-10-15; share price $172.50 (Oct 14 2026)*
+
+| | Value |
+|---|---|
+| Sum of PV of FCFF, years 1–10 | $29.6B |
+| PV of terminal value | $69.1B |
+| **Enterprise value** | **$98.7B** |
+| + Net non-operating assets | $9.8B |
+| Equity value | $108.5B |
+| ÷ Diluted shares | 1,290.0m |
+| **Value per share** | **$84.10** |
+| Terminal value % of EV | 70.0% |
+| Terminal value / year-10 EBIT | 10.2× |
+| vs share price $172.50 | −51% |
+| vs Morningstar fair value $145 (Aug 2026) | −42% |
+| Model EV ÷ market-implied EV ($212.7B) | 0.46× |
+
+At a 10.39% WACC, 3% terminal growth and a 25% terminal EBIT margin, the base case is worth about $84 a share, roughly half the current price and 42% below Morningstar's $145. The market is pricing in about twice the operating value this forecast supports, so the reverse DCF (what growth and margins justify $172.50) is the next step. Two of the most sensitive inputs: a 30% terminal EBIT margin lifts the value to about $99, and ignoring SBC as a cost lifts it to about $103.

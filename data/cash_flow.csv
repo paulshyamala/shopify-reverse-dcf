@@ -1,0 +1,157 @@
+period,section,line,value,xbrl_tag,xbrl_value,weight,form,accession_number,period_end
+FY2021,non_cash,Amortization and depreciation,66.308,us-gaap:DepreciationDepletionAndAmortization,66.308,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Trade and other receivables,-72.3,us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables,72.3,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,net_income,Net (loss) income for the year,2914.659,us-gaap:NetIncomeLoss,2914.659,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Merchant cash advances and related receivables,-234.794,us-gaap:IncreaseDecreaseInFinanceReceivables,234.794,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Stock-based compensation,330.763,us-gaap:StockOptionPlanExpense,330.763,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Amortization of debt offering costs,2.343,us-gaap:AmortizationOfFinancingCostsAndDiscounts,2.343,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Other current assets,-50.151,us-gaap:IncreaseDecreaseInOtherCurrentAssets,50.151,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Non-cash consideration received in exchange for services,-268.058,shop:ContractWithCustomerLiabilityIncreaseDecreaseForContractReceivedInExchangeForServices,268.058,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Impairment of right-of-use assets and leasehold improvements,30.145,us-gaap:AssetImpairmentCharges,30.145,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Accounts payable and accrued liabilities,138.175,us-gaap:IncreaseDecreaseInAccountsPayableAndAccruedLiabilities,138.175,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Provision for transaction and loan losses,43.781,us-gaap:ProvisionForDoubtfulAccounts,43.781,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Income taxes receivable and payable,45.263,us-gaap:IncreaseDecreaseInAccruedIncomeTaxesPayable,45.263,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Deferred income tax (recovery) expense,190.963,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,-190.963,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Revenue related to non-cash consideration,-58.38,shop:RevenueRelatedToNonCashConsideration,58.38,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Deferred revenue,309.289,us-gaap:IncreaseDecreaseInContractWithCustomerLiability,309.289,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,op_change,Lease assets and liabilities,2.935,shop:IncreaseDecreaseinDeferredRentCredit,2.935,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Net loss (gain) on equity and other investments,-2859.8,us-gaap:UnrealizedGainLossOnInvestments,2859.8,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,non_cash,Unrealized foreign exchange loss,4.57,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,-4.57,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,ocf,Net cash (used in) provided by operating activities,535.711,us-gaap:NetCashProvidedByUsedInOperatingActivities,535.711,,40-F,0001594805-23-000011,2021-12-31
+FY2021,shopify_capital_investing,Purchases and originations of loans,-198.523,us-gaap:PaymentsToAcquireLoansHeldForInvestment,198.523,-1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,shopify_capital_investing,Repayments of loans,167.24,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,167.24,1.0,40-F,0001594805-23-000011,2021-12-31
+FY2021,other,Income before income taxes,3140.592,us-gaap:IncomeLossAttributableToParent,3140.592,,40-F,0001594805-23-000011,2021-12-31
+FY2021,other,Provision for income taxes,225.933,us-gaap:IncomeTaxExpenseBenefit,225.933,,40-F,0001594805-23-000011,2021-12-31
+FY2021,other,"Cash paid for income taxes, net",-10.466,us-gaap:IncomeTaxesPaidNet,-10.466,,40-F,0001594805-23-000011,2021-12-31
+FY2021,other,Amortization of acquired intangibles,24.48,us-gaap:AmortizationOfIntangibleAssets,24.48,,40-F,0001594805-23-000011,2021-12-31
+FY2022,non_cash,Amortization and depreciation,93.0,us-gaap:DepreciationDepletionAndAmortization,93.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,op_change,Trade and other receivables,-105.0,us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables,105.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,net_income,Net income (loss) for the year,-3460.0,us-gaap:NetIncomeLoss,-3460.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,op_change,"Merchant cash advances and related receivables, net",-23.0,us-gaap:IncreaseDecreaseInFinanceReceivables,23.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Stock-based compensation,549.0,us-gaap:StockOptionPlanExpense,549.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,op_change,Other current and long-term assets,-31.0,us-gaap:IncreaseDecreaseInOtherOperatingAssets,31.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Impairment of right-of-use assets and leasehold improvements,84.0,us-gaap:OtherAssetImpairmentCharges,84.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,op_change,Accounts payable and accrued liabilities,28.0,us-gaap:IncreaseDecreaseInAccountsPayableAndAccruedLiabilities,28.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Provision for transaction and loan losses,74.0,us-gaap:ProvisionForDoubtfulAccounts,74.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,op_change,Deferred revenue,32.0,us-gaap:IncreaseDecreaseInContractWithCustomerLiability,32.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Deferred income tax expense (recovery),-187.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,187.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Revenue related to non-cash consideration,-121.0,shop:RevenueRelatedToNonCashConsideration,121.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Impairment on sales of Shopify's logistics businesses,0.0,us-gaap:DisposalGroupNotDiscontinuedOperationLossGainOnWriteDown,0.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Net (gain) loss on equity and other investments,2919.0,us-gaap:UnrealizedGainLossOnInvestments,-2919.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Net loss on equity method investment,-0.0,us-gaap:IncomeLossFromEquityMethodInvestments,0.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,non_cash,Unrealized foreign exchange (gain) loss,12.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,-12.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,ocf,Net cash provided by operating activities,-136.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,-136.0,,10-K,0001594805-25-000012,2022-12-31
+FY2022,shopify_capital_investing,Purchases and originations of loans,-526.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,526.0,-1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,shopify_capital_investing,Repayments and sales of loans,367.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,367.0,1.0,10-K,0001594805-25-000012,2022-12-31
+FY2022,other,Income before income taxes,-3623.0,us-gaap:IncomeLossAttributableToParent,-3623.0,,10-K,0001594805-25-000012,2022-12-31
+FY2022,other,Provision for income taxes,-163.0,us-gaap:IncomeTaxExpenseBenefit,-163.0,,10-K,0001594805-25-000012,2022-12-31
+FY2022,other,"Cash paid for income taxes, net",27.0,us-gaap:IncomeTaxesPaidNet,27.0,,10-K,0001594805-25-000012,2022-12-31
+FY2022,other,Amortization of acquired intangibles,54.0,us-gaap:AmortizationOfIntangibleAssets,54.0,,10-K,0001594805-25-000012,2022-12-31
+FY2023,non_cash,Amortization and depreciation,70.0,us-gaap:DepreciationDepletionAndAmortization,70.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,op_change,Trade and other receivables,-98.0,us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables,98.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,net_income,Net income for the year,132.0,us-gaap:NetIncomeLoss,132.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,op_change,"Merchant cash advances and related receivables, net",214.0,us-gaap:IncreaseDecreaseInFinanceReceivables,-214.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Stock-based compensation,615.0,us-gaap:StockOptionPlanExpense,615.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,op_change,Other current and long-term assets,-50.0,us-gaap:IncreaseDecreaseInOtherOperatingAssets,50.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Impairment of right-of-use assets and leasehold improvements,38.0,us-gaap:OtherAssetImpairmentCharges,38.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,op_change,Accounts payable and accrued liabilities,69.0,us-gaap:IncreaseDecreaseInAccountsPayableAndAccruedLiabilities,69.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Provision for transaction and loan losses,80.0,us-gaap:ProvisionForDoubtfulAccounts,80.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,op_change,Deferred revenue,60.0,us-gaap:IncreaseDecreaseInContractWithCustomerLiability,60.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Deferred income tax (recovery) expense,-1.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,1.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Revenue related to non-cash consideration,-158.0,shop:RevenueRelatedToNonCashConsideration,158.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Impairment on sales of Shopify's logistics businesses,1340.0,us-gaap:DisposalGroupNotDiscontinuedOperationLossGainOnWriteDown,1340.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Net loss (gain) on equity and other investments,-1419.0,us-gaap:UnrealizedGainLossOnInvestments,1419.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Net loss on equity method investment,58.0,us-gaap:IncomeLossFromEquityMethodInvestments,-58.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Realized loss on embedded derivative,0.0,us-gaap:EmbeddedDerivativeLossOnEmbeddedDerivative,0.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,non_cash,Unrealized foreign exchange (gain) loss,-6.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,6.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,ocf,Net cash provided by operating activities,944.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,944.0,,10-K,0001594805-26-000007,2023-12-31
+FY2023,shopify_capital_investing,Purchases and originations of loans,-1861.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,1861.0,-1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,shopify_capital_investing,Repayments and sales of loans,1338.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,1338.0,1.0,10-K,0001594805-26-000007,2023-12-31
+FY2023,other,Income before income taxes,185.0,us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,185.0,,10-K,0001594805-26-000007,2023-12-31
+FY2023,other,Provision for income taxes,53.0,us-gaap:IncomeTaxExpenseBenefit,53.0,,10-K,0001594805-26-000007,2023-12-31
+FY2023,other,"Cash paid for income taxes, net",50.0,us-gaap:IncomeTaxesPaidNet,50.0,,10-K,0001594805-26-000007,2023-12-31
+FY2023,other,Amortization of acquired intangibles,38.0,us-gaap:AmortizationOfIntangibleAssets,38.0,,10-K,0001594805-26-000007,2023-12-31
+FY2024,non_cash,Amortization and depreciation,36.0,us-gaap:DepreciationDepletionAndAmortization,36.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,op_change,Trade and other receivables,-148.0,us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables,148.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,net_income,Net income for the year,2019.0,us-gaap:NetIncomeLoss,2019.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,op_change,"Merchant cash advances and related receivables, net",-82.0,us-gaap:IncreaseDecreaseInFinanceReceivables,82.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Stock-based compensation,430.0,us-gaap:StockOptionPlanExpense,430.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,op_change,Other current and long-term assets,-72.0,us-gaap:IncreaseDecreaseInOtherOperatingAssets,72.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Impairment of right-of-use assets and leasehold improvements,0.0,us-gaap:OtherAssetImpairmentCharges,0.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,op_change,Accounts payable and accrued liabilities,110.0,us-gaap:IncreaseDecreaseInAccountsPayableAndAccruedLiabilities,110.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Provision for transaction and loan losses,148.0,us-gaap:ProvisionForDoubtfulAccounts,148.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,op_change,Deferred revenue,26.0,us-gaap:IncreaseDecreaseInContractWithCustomerLiability,26.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Deferred income tax (recovery) expense,78.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,-78.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Revenue related to non-cash consideration,-94.0,shop:RevenueRelatedToNonCashConsideration,94.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Impairment on sales of Shopify's logistics businesses,0.0,us-gaap:DisposalGroupNotDiscontinuedOperationLossGainOnWriteDown,0.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Net loss (gain) on equity and other investments,-992.0,us-gaap:UnrealizedGainLossOnInvestments,992.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Net loss on equity method investment,138.0,us-gaap:IncomeLossFromEquityMethodInvestments,-138.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Realized loss on embedded derivative,0.0,us-gaap:EmbeddedDerivativeLossOnEmbeddedDerivative,0.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,non_cash,Unrealized foreign exchange (gain) loss,19.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,-19.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,ocf,Net cash provided by operating activities,1616.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,1616.0,,10-K,0001594805-26-000007,2024-12-31
+FY2024,shopify_capital_investing,Purchases and originations of loans,-3006.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,3006.0,-1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,shopify_capital_investing,Repayments and sales of loans,2542.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,2542.0,1.0,10-K,0001594805-26-000007,2024-12-31
+FY2024,other,Income before income taxes,2228.0,us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,2228.0,,10-K,0001594805-26-000007,2024-12-31
+FY2024,other,Provision for income taxes,209.0,us-gaap:IncomeTaxExpenseBenefit,209.0,,10-K,0001594805-26-000007,2024-12-31
+FY2024,other,"Cash paid for income taxes, net",116.0,us-gaap:IncomeTaxesPaidNet,116.0,,10-K,0001594805-26-000007,2024-12-31
+FY2024,other,Amortization of acquired intangibles,14.0,us-gaap:AmortizationOfIntangibleAssets,14.0,,10-K,0001594805-26-000007,2024-12-31
+FY2025,non_cash,Amortization and depreciation,31.0,us-gaap:DepreciationDepletionAndAmortization,31.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,op_change,Trade and other receivables,-219.0,us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables,219.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,net_income,Net income for the year,1231.0,us-gaap:NetIncomeLoss,1231.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,op_change,"Merchant cash advances and related receivables, net",-141.0,us-gaap:IncreaseDecreaseInFinanceReceivables,141.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Stock-based compensation,449.0,us-gaap:StockOptionPlanExpense,449.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,op_change,Other current and long-term assets,-38.0,us-gaap:IncreaseDecreaseInOtherOperatingAssets,38.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Impairment of right-of-use assets and leasehold improvements,13.0,us-gaap:OtherAssetImpairmentCharges,13.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,op_change,Accounts payable and accrued liabilities,262.0,us-gaap:IncreaseDecreaseInAccountsPayableAndAccruedLiabilities,262.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Provision for transaction and loan losses,230.0,us-gaap:ProvisionForDoubtfulAccounts,230.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,op_change,Deferred revenue,19.0,us-gaap:IncreaseDecreaseInContractWithCustomerLiability,19.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Deferred income tax (recovery) expense,-14.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,14.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Revenue related to non-cash consideration,-49.0,shop:RevenueRelatedToNonCashConsideration,49.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Impairment on sales of Shopify's logistics businesses,0.0,us-gaap:DisposalGroupNotDiscontinuedOperationLossGainOnWriteDown,0.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Net loss (gain) on equity and other investments,153.0,us-gaap:UnrealizedGainLossOnInvestments,-153.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Net loss on equity method investment,40.0,us-gaap:IncomeLossFromEquityMethodInvestments,-40.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Realized loss on embedded derivative,123.0,us-gaap:EmbeddedDerivativeLossOnEmbeddedDerivative,123.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,non_cash,Unrealized foreign exchange (gain) loss,-57.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,57.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,ocf,Net cash provided by operating activities,2033.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,2033.0,,10-K,0001594805-26-000007,2025-12-31
+FY2025,shopify_capital_investing,Purchases and originations of loans,-4014.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,4014.0,-1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,shopify_capital_investing,Repayments and sales of loans,3435.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,3435.0,1.0,10-K,0001594805-26-000007,2025-12-31
+FY2025,other,Income before income taxes,1509.0,us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,1509.0,,10-K,0001594805-26-000007,2025-12-31
+FY2025,other,Provision for income taxes,278.0,us-gaap:IncomeTaxExpenseBenefit,278.0,,10-K,0001594805-26-000007,2025-12-31
+FY2025,other,"Cash paid for income taxes, net",194.0,us-gaap:IncomeTaxesPaidNet,194.0,,10-K,0001594805-26-000007,2025-12-31
+FY2025,other,Amortization of acquired intangibles,13.0,us-gaap:AmortizationOfIntangibleAssets,13.0,,10-K,0001594805-26-000007,2025-12-31
+H1 2025,non_cash,Amortization and depreciation,16.0,us-gaap:DepreciationDepletionAndAmortization,16.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,net_income,Net income for the period,224.0,us-gaap:NetIncomeLoss,224.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Stock-based compensation,227.0,us-gaap:StockOptionPlanExpense,227.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Impairment of right-of-use assets and leasehold improvements,10.0,us-gaap:OperatingLeaseImpairmentLoss,10.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Provision for transaction and loan losses,87.0,us-gaap:ProvisionForDoubtfulAccounts,87.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Deferred income tax expense (recovery),-31.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,31.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Revenue related to non-cash consideration,-25.0,shop:RevenueRelatedToNonCashConsideration,25.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Net (gain) loss on equity and other investments,339.0,us-gaap:UnrealizedGainLossOnInvestments,-339.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Net loss on equity method investment,47.0,us-gaap:IncomeLossFromEquityMethodInvestments,-47.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,non_cash,Unrealized foreign exchange loss (gain),-58.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,58.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,op_change,Changes in operating assets and liabilities,-41.0,us-gaap:IncreaseDecreaseInOtherOperatingCapitalNet,41.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,ocf,Net cash provided by operating activities,795.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,795.0,,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,shopify_capital_investing,Purchases and originations of loans and merchant cash advances(1),-1749.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,1749.0,-1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,shopify_capital_investing,Repayments and sales of loans and merchant cash advances(1),1404.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,1404.0,1.0,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,other,Income before income taxes,309.0,us-gaap:IncomeLossAttributableToParent,309.0,,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,other,Provision for income taxes,85.0,us-gaap:IncomeTaxExpenseBenefit,85.0,,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,other,"Cash paid for income taxes, net",88.0,us-gaap:IncomeTaxesPaidNet,88.0,,10-Q,0001594805-26-000047,2025-06-30
+H1 2025,other,Amortization of acquired intangibles,6.0,us-gaap:AmortizationOfIntangibleAssets,6.0,,10-Q,0001594805-25-000073,2025-06-30
+H1 2026,non_cash,Amortization and depreciation,14.0,us-gaap:DepreciationDepletionAndAmortization,14.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,net_income,Net income for the period,921.0,us-gaap:NetIncomeLoss,921.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Stock-based compensation,260.0,us-gaap:StockOptionPlanExpense,260.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Impairment of right-of-use assets and leasehold improvements,0.0,us-gaap:OperatingLeaseImpairmentLoss,0.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Provision for transaction and loan losses,142.0,us-gaap:ProvisionForDoubtfulAccounts,142.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Deferred income tax expense (recovery),26.0,us-gaap:IncreaseDecreaseInDeferredIncomeTaxes,-26.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Revenue related to non-cash consideration,-25.0,shop:RevenueRelatedToNonCashConsideration,25.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Net (gain) loss on equity and other investments,-189.0,us-gaap:UnrealizedGainLossOnInvestments,189.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Net loss on equity method investment,43.0,us-gaap:IncomeLossFromEquityMethodInvestments,-43.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,non_cash,Unrealized foreign exchange loss (gain),18.0,us-gaap:ForeignCurrencyTransactionGainLossUnrealized,-18.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,op_change,Changes in operating assets and liabilities,-71.0,us-gaap:IncreaseDecreaseInOtherOperatingCapitalNet,71.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,ocf,Net cash provided by operating activities,1139.0,us-gaap:NetCashProvidedByUsedInOperatingActivities,1139.0,,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,shopify_capital_investing,Purchases and originations of loans and merchant cash advances(1),-2933.0,us-gaap:PaymentsToAcquireLoansHeldForInvestment,2933.0,-1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,shopify_capital_investing,Repayments and sales of loans and merchant cash advances(1),2460.0,us-gaap:ProceedsFromPrincipalRepaymentsOnLoansAndLeasesHeldForInvestment,2460.0,1.0,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,other,Income before income taxes,1141.0,us-gaap:IncomeLossAttributableToParent,1141.0,,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,other,Provision for income taxes,220.0,us-gaap:IncomeTaxExpenseBenefit,220.0,,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,other,"Cash paid for income taxes, net",241.0,us-gaap:IncomeTaxesPaidNet,241.0,,10-Q,0001594805-26-000047,2026-06-30
+H1 2026,other,Amortization of acquired intangibles,,,,,,,2026-06-30
