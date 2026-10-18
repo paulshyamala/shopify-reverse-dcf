@@ -1,0 +1,19 @@
+item,bear,base,bull
+"GMV growth, year 1",0.25,0.29,0.33
+"GMV growth, year 10",0.05,0.07,0.09
+Take rate increase per year,0.0,0.0002,0.0003
+Terminal EBIT margin (year 10),0.2,0.25,0.3
+Loan book % of revenue increase,0.22,0.2,0.18
+WACC,0.115,0.10385,0.095
+Terminal growth rate,0.025,0.03,0.035
+Value per share,45.183857,84.10102,156.634977
+Upside / (downside) vs price,-0.738065,-0.512458,-0.091971
+Enterprise value,48485.012976,98688.356569,192257.542401
+Equity value,58287.412976,108490.756569,202059.942401
+PV of terminal value % of EV,0.608934,0.699756,0.7669
+Year-10 GMV,1721548.287011,2222063.82539,2849509.066892
+Year-10 revenue,52857.767469,72669.534901,96038.77583
+Year-10 FCFF,7379.951153,12566.55065,19979.744229
+TV / year-10 EBIT,8.294444,10.209885,12.682222
+Weights,0.25,0.5,0.25
+Probability-weighted value per share,92.505218,,

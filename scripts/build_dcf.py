@@ -47,6 +47,8 @@ I_LABELS = {
     "implied_ev": "Implied enterprise value",
 }
 
+OVERRIDE = "GMV growth override (constant, all 10 years)"
+
 EXPECTED = {  # from the brief; tolerance 0.5% (value per share: $0.05)
     ("GMV", 1): 557_492, ("Revenue", 1): 17_229, ("EBIT", 1): 2_586, ("NOPAT", 1): 2_094,
     ("FCFF", 1): 1_144, ("PV of FCFF", 1): 1_036, ("Revenue", 10): 72_670, ("EBIT", 10): 18_167,
@@ -69,6 +71,15 @@ REF = re.compile(r"(?:([A-Za-z]+)!)?\$?([A-Z]{1,3})\$?(\d+)")
 RANGE = re.compile(r"(?:([A-Za-z]+)!)?\$?([A-Z]{1,3})\$?(\d+):\$?([A-Z]{1,3})\$?(\d+)")
 
 
+ISBLANK = re.compile(r"ISBLANK\((?:([A-Za-z]+)!)?\$?([A-Z]{1,3})\$?(\d+)\)")
+
+
+def _is_blank(wb, sheet, coord, overrides):
+    if (sheet, coord) in overrides:
+        return overrides[(sheet, coord)] is None
+    return wb[sheet][coord].value is None
+
+
 def _expand(m):
     from openpyxl.utils import column_index_from_string as idx
     sheet = f"{m.group(1)}!" if m.group(1) else ""
@@ -78,7 +89,7 @@ def _expand(m):
 
 
 def evaluate(wb, sheet, coord, overrides=None, cache=None):
-    """Excel-style evaluation: arithmetic incl. ^, cross-sheet refs, SUM(range), IF,
+    """Excel-style evaluation: arithmetic incl. ^, cross-sheet refs, SUM(range), IF, ISBLANK,
     IFERROR(x,""), CHOOSE, MATCH, = / <>. Blank = 0; text compares case-insensitively."""
     overrides = overrides or {}
     cache = {} if cache is None else cache
@@ -93,6 +104,7 @@ def evaluate(wb, sheet, coord, overrides=None, cache=None):
             val = evaluate(wb, m.group(1) or sheet, m.group(2) + m.group(3), overrides, cache)
             return "0" if val is None else repr(val.lower() if isinstance(val, str) else val)
         expr = re.sub(r'"[^"]*"', lambda m: m.group(0).lower(), v[1:])
+        expr = ISBLANK.sub(lambda m: repr(_is_blank(wb, m.group(1) or sheet, m.group(2) + m.group(3), overrides)), expr)
         expr = RANGE.sub(_expand, expr)
         expr = REF.sub(ref, expr).replace("{", "[").replace("}", "]").replace("<>", "!=").replace("^", "**")
         expr = re.sub(r"(?<![<>!=])=(?!=)", "==", expr)
@@ -169,7 +181,12 @@ def main():
     link0 = lambda t: "Link" if t == 0 else "Formula"
 
     section("Revenue build")
-    line("GMV growth", PCT, lambda t: f"={I['g1']}+({I['g10']}-{I['g1']})*({T(t)}-1)/({I['years']}-1)", FC)
+    fade = lambda t: f"{I['g1']}+({I['g10']}-{I['g1']})*({T(t)}-1)/({I['years']}-1)"
+    if OVERRIDE in i_rows:  # blank override = the fade; a value = constant growth (reverse DCF)
+        ov = f"{INPUTS}!$B${i_rows[OVERRIDE]}"
+        line("GMV growth", PCT, lambda t: f"=IF(ISBLANK({ov}),{fade(t)},{ov})", FC)
+    else:
+        line("GMV growth", PCT, lambda t: f"={fade(t)}", FC)
     line("GMV", USD_M, lambda t: f"={I['gmv0']}" if t == 0 else f"={prev('GMV', t)}*(1+{at('GMV growth', t)})",
          range(0, YEARS + 1), link0)
     line("Take rate", TAKE, lambda t: f"={I['take0']}+{I['take_inc']}*{T(t)}", range(0, YEARS + 1))
