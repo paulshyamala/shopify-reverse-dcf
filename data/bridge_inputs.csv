@@ -5,3 +5,5 @@ Basic weighted-average shares,H1 2026,2026-06-30,1299.266611,us-gaap:WeightedAve
 Interest income,FY2025,2025-12-31,331.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-K,0001594805-26-000007,2026-02-11
 Interest income,H1 2025,2025-06-30,171.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-Q,0001594805-26-000047,2026-08-05
 Interest income,H1 2026,2026-06-30,141.0,us-gaap:InterestIncomeExpenseNonoperatingNet,"Income statement: Other income, Interest income",10-Q,0001594805-26-000047,2026-08-05
+"Operating lease liabilities, current",H1 2026,2026-06-30,10.0,us-gaap:OperatingLeaseLiabilityCurrent,Balance sheet: Operating lease liabilities (current liabilities),10-Q,0001594805-26-000047,2026-08-05
+"Operating lease liabilities, non-current",H1 2026,2026-06-30,168.0,us-gaap:OperatingLeaseLiabilityNoncurrent,Balance sheet: Operating lease liabilities (long-term liabilities),10-Q,0001594805-26-000047,2026-08-05

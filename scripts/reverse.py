@@ -38,14 +38,27 @@ LABELS = {
     "loans": "Loan book % of revenue increase", "flag": "SBC deduction flag", "sbc": "SBC % of revenue (forecast)",
     "tg": "Terminal growth rate", "years": "Forecast years", "wacc": "WACC", "nonop": "Net non-operating assets",
     "shares": "Diluted shares outstanding", "price": "Share price", "override": OVERRIDE,
+    # stable period (Damodaran Rules 3 & 4) and the inputs behind the discount rates
+    "stable_wacc": "Stable-period WACC", "moat": "Moat spread over stable WACC", "beta_s": "Stable-period beta",
+    "rf": "Risk-free rate", "mrp": "Market risk premium",
+    # equity bridge components (for haircut / lease tests)
+    "cash_sec": "Cash & securities (100%)", "eq_inv": "Equity & other investments",
+    "flexport": "Flexport (equity method)", "debt": "Debt", "haircut": "Haircut on investments",
+    "leases": "Lease liabilities",
 }
-EXPECTED = {"a": 0.291, "b": 0.185, "c": 0.538, "d": 0.505, "gmv10_a": 5_550_000}
+OPTIONAL = {"leases": 0.0}  # labels that may not exist yet -> default
+PREVIEW = {"a": 0.304, "b": 0.1855}  # brief of 2026-10-20, before leases (informational only)
 
 
 def dcf(p, growth=None):
-    """The DCF tab in Python. growth: None = fade; float = constant; callable t -> g."""
+    """The DCF tab in Python. growth: None = fade; float = constant; callable t -> g.
+
+    Years 1-10 at the high-growth WACC. Year 11 (Damodaran Rules 3 & 4): NOPAT at the
+    terminal margin and year-10 tax, reinvestment = NOPAT x g / stable ROIC (stable ROIC
+    = stable WACC + moat), TV = FCFF11 / (stable WACC - g), discounted at the year-10 factor.
+    """
     n = int(p["years"])
-    gmv, rev, out = p["gmv0"], p["rev0"], {"pv": 0.0}
+    gmv, rev, out = p["gmv0"], p["rev0"], {"pv": 0.0, "gmv_path": [p["gmv0"]], "rev_path": [p["rev0"]]}
     for t in range(1, n + 1):
         if callable(growth):
             g = growth(t)
@@ -62,11 +75,18 @@ def dcf(p, growth=None):
                 - (p["wc"] + p["loans"]) * (rev - prev_rev) + (1 - p["flag"]) * p["sbc"] * rev)
         df = 1 / (1 + p["wacc"]) ** t
         out["pv"] += fcff * df
-    out.update(gmv10=gmv, rev10=rev, fcff10=fcff, df10=df, margin10=margin, tax10=tax)
+        out["gmv_path"].append(gmv)
+        out["rev_path"].append(rev)
+    out.update(gmv10=gmv, rev10=rev, fcff10=fcff, df10=df, margin10=margin, tax10=tax,
+               nopat10=rev * margin * (1 - tax))
     rev11 = rev * (1 + p["tg"])
-    fcff11 = (rev11 * margin * (1 - tax) + p["da"] * rev11 - p["capex"] * rev11
-              - (p["wc"] + p["loans"]) * (rev11 - rev) + (1 - p["flag"]) * p["sbc"] * rev11)
-    tv = fcff11 / (p["wacc"] - p["tg"])
+    nopat11 = rev11 * margin * (1 - tax)
+    stable_roic = p["stable_wacc"] + p["moat"]
+    reinv_rate = p["tg"] / stable_roic
+    fcff11 = nopat11 * (1 - reinv_rate) + (1 - p["flag"]) * p["sbc"] * rev11
+    tv = fcff11 / (p["stable_wacc"] - p["tg"])
+    out.update(rev11=rev11, nopat11=nopat11, fcff11=fcff11, tv=tv, pv_tv=tv * df,
+               stable_roic=stable_roic, reinv_rate=reinv_rate)
     out["ev"] = out["pv"] + tv * df
     out["vps"] = (out["ev"] + p["nonop"]) / p["shares"]
     return out
@@ -77,8 +97,23 @@ def load_params(wb):
     inp = wb[INPUTS]
     i_rows = {inp.cell(r, 1).value: r for r in range(1, inp.max_row + 1) if inp.cell(r, 1).value}
     cache = {}
-    p = {k: evaluate(wb, INPUTS, f"B{i_rows[label]}", None, cache) for k, label in LABELS.items() if k != "override"}
+    p = {k: (evaluate(wb, INPUTS, f"B{i_rows[label]}", None, cache) if label in i_rows else OPTIONAL[k])
+         for k, label in LABELS.items() if k != "override"}
     return p, i_rows
+
+
+def bridge(p):
+    """Net non-operating assets from its parts (as the Inputs formula), for haircut / lease tests."""
+    return p["cash_sec"] + (p["eq_inv"] + p["flexport"]) * (1 - p["haircut"]) - p["debt"] - p["leases"]
+
+
+def with_rates(p, rf=None, mrp=None, beta=None, beta_s=None):
+    """Recompute both WACCs (CAPM, no debt) after changing the risk-free rate, MRP or a beta."""
+    rf_, mrp_ = p["rf"] if rf is None else rf, p["mrp"] if mrp is None else mrp
+    beta_ = (p["wacc"] - p["rf"]) / p["mrp"] if beta is None else beta   # the beta behind today's WACC
+    beta_s_ = p["beta_s"] if beta_s is None else beta_s
+    return {**p, "rf": rf_, "mrp": mrp_, "beta_s": beta_s_,
+            "wacc": rf_ + beta_ * mrp_, "stable_wacc": rf_ + beta_s_ * mrp_}
 
 
 def bisect(f, target, lo, hi):
@@ -113,8 +148,9 @@ def main():
     base = dcf(p)
     wb_vps = evaluate(wb, DCF, f"B{d_rows['Value per share']}")
     wb_ev = evaluate(wb, DCF, f"B{d_rows['Enterprise value']}")
-    assert abs(base["vps"] - wb_vps) <= 0.01 and abs(base["vps"] - 84.10) <= 0.01, (base["vps"], wb_vps)
-    assert abs(base["ev"] - wb_ev) <= 0.5 and abs(base["ev"] - 98_688) <= 0.5, (base["ev"], wb_ev)
+    assert abs(base["vps"] - wb_vps) <= 0.01, (base["vps"], wb_vps)
+    assert abs(base["ev"] - wb_ev) <= 0.5, (base["ev"], wb_ev)
+    assert abs(bridge(p) - p["nonop"]) < 1e-6, (bridge(p), p["nonop"])
     print(f"Base case reproduced: Python ${base['vps']:.4f} / EV {base['ev']:,.1f}; "
           f"workbook ${wb_vps:.4f} / EV {wb_ev:,.1f}")
 
@@ -134,7 +170,8 @@ def main():
     print(f"\n== Reverse DCF (price ${price:.2f}; base-case value ${base['vps']:.2f})")
     checks = [(RESULTS[0][0], "a"), (RESULTS[1][0], "b"), (RESULTS[2][0], "c"), (RESULTS[3][0], "d")]
     for label, key in checks:
-        print(f"  {label:48} {results[label]:8.2%}   (preview ≈ {EXPECTED[key]:.1%})")
+        hint = f"   (pre-lease preview ≈ {PREVIEW[key]:.2%})" if key in PREVIEW else ""
+        print(f"  {label:48} {results[label]:8.2%}{hint}")
     for label, fmt in RESULTS[4:]:
         v = results[label]
         print(f"  {label:48} " + (f"{v:,.0f}" if fmt == "#,##0" else f"{v:.2f}x"))

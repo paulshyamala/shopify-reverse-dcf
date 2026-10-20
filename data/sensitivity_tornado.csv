@@ -1,0 +1,30 @@
+assumption,base,test,value_per_share,change_vs_base
+SBC treatment,cost,ignore,98.944587,20.962584
+Market risk premium,4.14%,5.5%,63.119672,-14.862332
+Terminal EBIT margin,25%,30%,91.749168,13.767164
+Terminal EBIT margin,25%,20%,64.21484,-13.767164
+"GMV growth, year 1",29%,33%,89.080986,11.098982
+Market risk premium,4.14%,5.0%,67.968462,-10.013542
+"GMV growth, year 1",29%,25%,68.275988,-9.706016
+Risk-free rate,5.21%,4.71%,84.259245,6.277241
+Beta (high-growth),1.25,1.0,84.180813,6.198809
+Beta (high-growth),1.25,1.5,72.361056,-5.620948
+Risk-free rate,5.21%,5.71%,72.519404,-5.4626
+Stable-period beta,1.00,1.25,72.545291,-5.436713
+Loan book % of revenue increase,20%,0%,83.378059,5.396055
+"GMV growth, year 10",7%,9%,82.956282,4.974278
+"GMV growth, year 10",7%,5%,73.345347,-4.636657
+Moat spread,2%,0%,74.327561,-3.654443
+Take-rate increase per year,0.02 pt,0,74.349027,-3.632977
+Terminal tax rate,24%,26.5%,75.853541,-2.128463
+Take-rate increase per year,0.02 pt,0.03 pt,79.798492,1.816488
+Moat spread,2%,3%,79.365366,1.383362
+Loan book % of revenue increase,20%,15%,79.331018,1.349014
+Loan book % of revenue increase,20%,25%,76.63299,-1.349014
+Investment haircut,20%,50%,76.723172,-1.258832
+Terminal growth,3%,3.5%,79.191041,1.209037
+Terminal growth,3%,2.5%,76.923842,-1.058162
+Investment haircut,20%,0%,78.821225,0.839221
+Year-1 tax rate,19%,15%,78.588979,0.606975
+Working capital % of revenue increase,4%,2%,78.521609,0.539605
+Working capital % of revenue increase,4%,6%,77.442398,-0.539605

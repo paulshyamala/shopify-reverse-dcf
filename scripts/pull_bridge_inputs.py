@@ -4,6 +4,7 @@
 - basic weighted-average shares, H1 2026
 - interest income (income statement "Interest income": interest on marketable
   securities, not Shopify Capital loan revenue), FY2025 / H1 2025 / H1 2026
+- operating lease liabilities (current + non-current), Jun 30 2026
 
 Uses the same cached SEC XBRL data and rules as pull_sec.py (most recent filing
 wins, six-month durations for H1). Missing values are left blank, never
@@ -33,6 +34,11 @@ ITEMS = [
      "Income statement: weighted average shares, basic", ["H1 2026"]),
     ("Interest income", "flow", "us-gaap:InterestIncomeExpenseNonoperatingNet",
      "Income statement: Other income, Interest income", ["FY2025", "H1 2025", "H1 2026"]),
+    # All of Shopify's leases are operating leases (FY2025 10-K); no finance-lease facts exist
+    ("Operating lease liabilities, current", "stock", "us-gaap:OperatingLeaseLiabilityCurrent",
+     "Balance sheet: Operating lease liabilities (current liabilities)", ["H1 2026"]),
+    ("Operating lease liabilities, non-current", "stock", "us-gaap:OperatingLeaseLiabilityNoncurrent",
+     "Balance sheet: Operating lease liabilities (long-term liabilities)", ["H1 2026"]),
 ]
 CHECKS = {("Flexport equity-method investment", "FY2025"): 602}  # Dec 31 2025, FY2025 10-K
 

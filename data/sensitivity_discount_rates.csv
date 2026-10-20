@@ -1,0 +1,5 @@
+source,risk_free,erp,coe_beta_stable,coe_beta_high_growth,note
+This model,0.0521,0.0414,0.0935,0.10385,Inputs: 10Y Treasury (H.15) + Damodaran implied ERP
+Kroll inputs,0.056,0.05,0.106,0.1185,"Kroll ERP 5.0% + spot 20-yr Treasury ~5.60% (H.15, Oct 13 2026)"
+Fernandez 2025 survey,0.041,0.055,0.096,0.10975,Survey average ERP 5.5% + rf 4.1%
+Morningstar (Shopify),,,0.09,0.088,9.0% cost of equity; 8.8% WACC (2025 equity report)

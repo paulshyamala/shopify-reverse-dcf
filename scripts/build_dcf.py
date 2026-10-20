@@ -111,7 +111,8 @@ def evaluate(wb, sheet, coord, overrides=None, cache=None):
         expr = re.sub(r"IFERROR\(", "IFERROR(lambda: ", expr)
         v = eval(expr, {"__builtins__": {}, "IF": lambda c, a, b: a if c else b,
                         "CHOOSE": lambda i, *xs: xs[int(i) - 1], "MATCH": lambda x, arr, _: arr.index(x) + 1,
-                        "IFERROR": _iferror, "SUM": lambda *xs: sum(x for x in xs if isinstance(x, (int, float)))})
+                        "IFERROR": _iferror, "SUM": lambda *xs: sum(x for x in xs if isinstance(x, (int, float))),
+                        "AVERAGE": lambda *xs: (lambda n: sum(n) / len(n))([x for x in xs if isinstance(x, (int, float))])})
     cache[key] = v
     return v
 

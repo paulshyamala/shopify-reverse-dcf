@@ -1,0 +1,7 @@
+step,value_per_share
+This model,77.982004
+Treat SBC as free (SBC ignore),98.944587
+Ignore lending (loan book % = 0),104.340642
+"9% WACC, stable 9% (≈ Simply Wall St)",118.944152
+30% terminal EBIT margin (≈ Morningstar),134.897393
+GMV growth 33% → 9% (≈ market / Street),166.678357

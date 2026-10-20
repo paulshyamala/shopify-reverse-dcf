@@ -6,14 +6,15 @@ Terminal EBIT margin (year 10),0.2,0.25,0.3
 Loan book % of revenue increase,0.22,0.2,0.18
 WACC,0.115,0.10385,0.095
 Terminal growth rate,0.025,0.03,0.035
-Value per share,45.183857,84.10102,156.634977
-Upside / (downside) vs price,-0.738065,-0.512458,-0.091971
-Enterprise value,48485.012976,98688.356569,192257.542401
-Equity value,58287.412976,108490.756569,202059.942401
-PV of terminal value % of EV,0.608934,0.699756,0.7669
+Moat spread over stable WACC,0.0,0.02,0.03
+Value per share,45.148261,77.982004,129.039073
+Upside / (downside) vs price,-0.738271,-0.54793,-0.251947
+Enterprise value,48617.093403,90972.794144,156836.681122
+Equity value,58241.493403,100597.194144,166461.081122
+PV of terminal value % of EV,0.609996,0.674292,0.714255
 Year-10 GMV,1721548.287011,2222063.82539,2849509.066892
 Year-10 revenue,52857.767469,72669.534901,96038.77583
 Year-10 FCFF,7379.951153,12566.55065,19979.744229
-TV / year-10 EBIT,8.294444,10.209885,12.682222
+TV / year-10 EBIT,8.331551,9.069173,9.635503
 Weights,0.25,0.5,0.25
-Probability-weighted value per share,92.505218,,
+Probability-weighted value per share,82.537835,,

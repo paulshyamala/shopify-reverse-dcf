@@ -1,0 +1,5 @@
+scenario,description,final_year,value_per_share,final_revenue_usd_m
+"A, n = 5",Fade 7% → 3% over years 11–15; ROIC and WACC fade to stable,15,82.776303,90966.979
+"A, n = 10",Fade 7% → 3% over years 11–20; ROIC and WACC fade to stable,20,87.934867,116065.782
+B (Morningstar-style),"Years 11–20 at 14.8%, high-growth WACC, 24% reinvestment",20,142.46905,288915.779
+B at 8.8% WACC,"As B, with 8.8% for the high-growth and stable periods",20,186.21624,288915.779

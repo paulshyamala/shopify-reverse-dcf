@@ -23,7 +23,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
 from build_dcf import OVERRIDE, evaluate
 from build_wacc import snapshot
-from reverse import dcf, load_params
+from reverse import dcf, load_params, with_rates
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKBOOK = ROOT / "model" / "shopify_reverse_dcf.xlsx"
@@ -47,7 +47,11 @@ INPUT_ROWS = [
      "Bear sits between the industry-beta (10.4%) and adjusted-beta (13.8%) cost of equity. Bull: lower risk premium."),
     ("Terminal growth rate", "tg", "Terminal growth rate", PCT, 0.025, 0.035,
      "All below ~4% long-run nominal GDP (Fed SEP)."),
+    ("Moat spread over stable WACC", "moat", "Moat spread over stable WACC", PCT, 0.0, 0.03,
+     "Bear: no excess return after year 10 (ROIC = WACC). Bull: upper end of Damodaran's 2–3% for moat firms."),
 ]
+STABLE_NOTE = ("Stable period: beta 1.00 in all scenarios (stable WACC = risk-free + 1.0 × MRP); "
+               "the WACC row is the high-growth (years 1–10) rate.")
 WEIGHTS = (0.25, 0.50, 0.25)
 OUTPUTS = [  # (label, key, format)
     ("Value per share", "vps", PER_SHARE),
@@ -60,8 +64,7 @@ OUTPUTS = [  # (label, key, format)
     ("Year-10 FCFF", "fcff10", USD_M),
     ("TV / year-10 EBIT", "tv_ebit", MULT),
 ]
-EXPECTED = {"Bear": 45.18, "Base": 84.10, "Bull": 156.64, "weighted": 92.5,
-            "gmv10": {"Bear": 1.72e6, "Base": 2.22e6, "Bull": 2.85e6}}
+PREVIEW = {"Bear": 45.29, "Base": 78.12, "Bull": 129.18, "weighted": 82.68}  # 2026-10-20 brief, pre-lease; info only
 WEIGHTS_LABEL, WEIGHTED_LABEL, CHECK_LABEL = "Weights", "Probability-weighted value per share", \
     "Check: base scenario − DCF value per share"
 
@@ -86,8 +89,11 @@ def main():
     if wb[INPUTS][f"B{i_rows[OVERRIDE]}"].value is not None:
         sys.exit("The growth override is set; clear it so the base case is the growth fade.")
     base_vps = dcf(p)["vps"]
-    assert abs(base_vps - 84.10) <= 0.01, base_vps
-    print(f"Base case reproduced: ${base_vps:.4f}")
+    d = wb[DCF]
+    wb_vps = evaluate(wb, DCF, f"B{next(r for r in range(1, d.max_row + 1) if d.cell(r, 1).value == 'Value per share')}")
+    assert abs(base_vps - wb_vps) <= 0.01, (base_vps, wb_vps)
+    assert abs(with_rates(p, beta_s=1.0)["stable_wacc"] - p["stable_wacc"]) < 1e-12, "stable beta is not 1.00 on Inputs"
+    print(f"Base case reproduced: ${base_vps:.4f} (workbook ${wb_vps:.4f}); stable WACC {p['stable_wacc']:.3%} in all scenarios")
 
     ws = wb[SHEET]
     labels = {ws.cell(r, 1).value: r for r in range(1, ws.max_row + 1) if ws.cell(r, 1).value}
@@ -110,16 +116,10 @@ def main():
     print(f"  {'Weighted value per share':32}{'$' + format(weighted, ',.2f'):>14}  (weights {weights})")
 
     ok = abs(res["Base"]["vps"] - base_vps) < 1e-9
-    print("\n== Checks vs preview ($0.05; year-10 GMV ±0.5%)")
+    print("\n== Compared with the pre-lease preview (informational)")
     for s in SCEN:
-        good = abs(res[s]["vps"] - EXPECTED[s]) <= 0.05
-        g_ok = abs(res[s]["gmv10"] / EXPECTED["gmv10"][s] - 1) <= 0.005
-        ok &= good and g_ok
-        print(f"  {'OK  ' if good and g_ok else 'FAIL'} {s:5} ${res[s]['vps']:.2f} vs ${EXPECTED[s]:.2f}; "
-              f"year-10 GMV ${res[s]['gmv10'] / 1e6:.2f}T vs ${EXPECTED['gmv10'][s] / 1e6:.2f}T")
-    good = abs(weighted - EXPECTED["weighted"]) <= 0.05
-    ok &= good
-    print(f"  {'OK  ' if good else 'FAIL'} weighted ${weighted:.2f} vs ≈ ${EXPECTED['weighted']:.1f}")
+        print(f"  {s:5} ${res[s]['vps']:.2f}  (preview ${PREVIEW[s]:.2f}; {res[s]['vps'] - PREVIEW[s]:+.2f})")
+    print(f"  weighted ${weighted:.2f}  (preview ${PREVIEW['weighted']:.2f}; {weighted - PREVIEW['weighted']:+.2f})")
 
     with OUT_CSV.open("w", newline="") as fh:
         w = csv.writer(fh, lineterminator="\n")
@@ -176,7 +176,8 @@ def write_tab(wb, i_rows, bear, bull, weights, res):
             c.style, c.number_format = style, fmt
         ws.cell(r, 5, why)
         nxt[0] += 1
-    nxt[0] += 1
+    ws.cell(nxt[0], 1, STABLE_NOTE).font = Font(italic=True, color="808080")
+    nxt[0] += 2
 
     section("Outputs (scripts/scenarios.py)")
     vps_row = nxt[0]
