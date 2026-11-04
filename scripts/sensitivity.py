@@ -44,12 +44,6 @@ TERMINAL_G = [0.02, 0.025, 0.03, 0.035, 0.04]
 SBC = [("subtract (base)", 1), ("ignore", 0)]
 MOATS = [0.0, 0.01, 0.02, 0.03, 0.05]
 
-# Pre-lease preview from the 2026-10-20 brief: printed for comparison, never fails the run
-PREVIEW = {"g1_base": 0.304, "moat": {0.0: 74.47, 0.01: 76.47, 0.02: 78.12, 0.03: 79.50, 0.05: 81.69},
-           "walk": [78.12, 99.08, 104.48, 119.08, 135.04, 166.82],
-           "runway": {"A, n = 5": 82.91, "A, n = 10": 88.07, "B (Morningstar-style)": 142.61,
-                      "B at 8.8% WACC": 186.35}}
-
 EXTERNAL = [  # (estimate, value per share, source / basis); comparison inputs, typed with sources
     ("Street consensus target", 175.89, "48 analysts, low $130, high $210, 0 Sells; MarketBeat, Oct 2026"),
     ("Morningstar fair value", 145.00, "Aug 2026; 2025 report: WACC 8.8%, CoE 9.0%, 3-stage to year 20, "
@@ -243,19 +237,19 @@ def report(p, waccs, grid1, grid2, grid3, grid4, torn, wlk, run, rates, beta_hg)
     show("Grid 2: implied constant GMV growth (terminal growth ↓ / SBC →)", TERMINAL_G, [s for s, _ in SBC], grid2, ".2%")
     show("Grid 3: value per share (WACC ↓ / terminal EBIT margin →)", waccs, MARGINS, grid3, ",.2f")
     g1b = grid1[waccs.index(p["wacc"])][2]
-    print(f"\n  Grid 1 base {g1b:.2%} (pre-lease preview ≈ {PREVIEW['g1_base']:.1%})")
-    print("\n== Grid 4: value per share by moat spread (pre-lease preview in brackets)")
+    print(f"\n  Grid 1 base {g1b:.2%}")
+    print("\n== Grid 4: value per share by moat spread")
     for m, v in zip(MOATS, grid4):
-        print(f"  {m:5.0%}  ${v:7.2f}  (${PREVIEW['moat'][m]:.2f})")
+        print(f"  {m:5.0%}  ${v:7.2f}")
     print("\n== Tornado (sorted by absolute change)")
     for a, b, t, v, dv in torn:
         print(f"  {a:40} {b:>8} → {t:<8} ${v:7.2f}  {dv:+7.2f}")
-    print("\n== Walk to Street assumptions (pre-lease preview in brackets)")
-    for (s, v), pv in zip(wlk, PREVIEW["walk"]):
-        print(f"  {s:46} ${v:7.2f}  (${pv:.2f})")
-    print("\n== Longer growth runway (pre-lease preview in brackets)")
+    print("\n== Walk to Street assumptions")
+    for s, v in wlk:
+        print(f"  {s:46} ${v:7.2f}")
+    print("\n== Longer growth runway")
     for n, desc, y, v, r in run:
-        print(f"  {n:22} ${v:7.2f}  year-{y} revenue ${r / 1e3:,.1f}B  (${PREVIEW['runway'][n]:.2f})")
+        print(f"  {n:22} ${v:7.2f}  year-{y} revenue ${r / 1e3:,.1f}B")
     print("\n== Discount rates (cost of equity at stable beta / high-growth beta)")
     for s, rf, e, note in rates:
         print(f"  {s:22} rf {rf:.2%} ERP {e:.2%} → {rf + p['beta_s'] * e:.2%} / {rf + beta_hg * e:.3%}")

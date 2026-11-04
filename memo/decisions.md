@@ -35,7 +35,7 @@ Every judgment call in the model, with the reasoning. Feeds the memo.
 | **Industry beta (base case)** | **10.39%**     |
 
 **Rationale:**
-I discount at 10.39%, which is simply Shopify's cost of equity, because the company has had no debt since settling its convertible notes in November 2025. I estimate it with CAPM (the risk-free rate plus beta, a stock's sensitivity to market swings, times the equity risk premium), using Damodaran's 1.25 beta for US software companies instead of Shopify's own 5-year beta of 2.62, which is distorted by the 2021–23 crash and by the loss-making, logistics-heavy business Shopify has since exited. The beta choice alone moves the cost of equity from 10.39% to 16.06%, so I test WACC from 8% to 14% in the sensitivity analysis and treat the adjusted-beta case (13.84%) as the conservative view.
+I discount at 10.39%, which is simply Shopify's cost of equity, because the company has had no debt since settling its convertible notes in November 2025. I estimate it with CAPM (the risk-free rate plus beta, a stock's sensitivity to market swings, times the equity risk premium), using Damodaran's 1.25 beta for US software companies instead of Shopify's own 5-year beta of 2.62, which is distorted by the 2021–23 crash and by the loss-making, logistics-heavy business Shopify has since exited. The beta choice alone moves the cost of equity from 10.39% to 16.06%, so I test WACC from 8% to 12% in the sensitivity analysis. The adjusted-beta case (13.84%) sits above that range and is the conservative view.
 
 ## 2. SBC treatment: subtract (base case)
 

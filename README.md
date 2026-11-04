@@ -10,9 +10,11 @@ A reverse DCF that solves for the GMV growth Shopify's current share price impli
 - **Value per share:** base \$77.98, bear \$45.15, bull \$129.04, at a 10.39% WACC in the base case. All three are below the price.
 - **Main conclusion:** the price assumes close to today's growth pace for a decade, a higher path than the bull case.
 
+The full model is an Excel workbook: [Download shopify_reverse_dcf.xlsx](model/shopify_reverse_dcf.xlsx)
+
 <a href="charts/scenarios_vs_price.png"><img src="charts/scenarios_vs_price.png" alt="Scenario values vs the share price" width="800"></a>
 
-Each assumption is explained in [memo/justification.md](memo/justification.md) and logged in [memo/decisions.md](memo/decisions.md). The full model is [model/shopify_reverse_dcf.xlsx](model/shopify_reverse_dcf.xlsx).
+Each assumption is explained in [memo/justification.md](memo/justification.md) and logged in [memo/decisions.md](memo/decisions.md).
 
 ## Contents
 
@@ -22,7 +24,7 @@ Each assumption is explained in [memo/justification.md](memo/justification.md) a
 - [Results](#results)
 - [Conclusions](#conclusions)
 - [Limitations](#limitations)
-- [Reproduce and license](#reproduce-and-license)
+- [License](#license)
 
 ## Objective
 
@@ -139,8 +141,6 @@ None of the three scenarios reaches the price, and stacking Street-style assumpt
 - Terminal value is 67.4% of base-case enterprise value.
 - The beta is for software only, while Shopify also runs payments and lending.
 
-## Reproduce and license
+## License
 
-To reproduce: install `requirements.txt`, fill `.env` from `.env.example`, run the scripts in order: `build_skeleton.py`, `pull_sec.py`, `fill_historicals.py`, `pull_gmv.py`, `finish_historicals.py`, `fill_ratios.py`, `build_wacc.py`, `tidy_inputs.py`, `sbc_inputs.py`, `pull_bridge_inputs.py`, `build_bridge.py`, `forecast_inputs.py`, `pull_fcff.py`, `fill_fcff.py`, `pull_capital.py`, `fill_capital.py`, `dcf_inputs.py`, `build_dcf.py`, `build_reverse.py`, `terminal_rules.py`, `add_leases.py`, `reverse.py`, `scenarios.py`, `sensitivity.py`, `reality_check.py`, `charts.py`. Steps before `reverse.py` are already applied to the committed workbook, and the share price, price date, raw beta and equity risk premium were entered by hand, so to regenerate the results start at `reverse.py`.
-
-License: [MIT](LICENSE). SEC filings are public data; third-party forecasts are cited, not redistributed.
+MIT, see [LICENSE](LICENSE). SEC filings are public data. Third-party e-commerce forecasts (eMarketer, Forrester) are cited with their sources in data/reality_check.csv.

@@ -47,7 +47,6 @@ LABELS = {
     "leases": "Lease liabilities",
 }
 OPTIONAL = {"leases": 0.0}  # labels that may not exist yet -> default
-PREVIEW = {"a": 0.304, "b": 0.1855}  # brief of 2026-10-20, before leases (informational only)
 
 
 def dcf(p, growth=None):
@@ -168,10 +167,8 @@ def main():
     }
 
     print(f"\n== Reverse DCF (price ${price:.2f}; base-case value ${base['vps']:.2f})")
-    checks = [(RESULTS[0][0], "a"), (RESULTS[1][0], "b"), (RESULTS[2][0], "c"), (RESULTS[3][0], "d")]
-    for label, key in checks:
-        hint = f"   (pre-lease preview ≈ {PREVIEW[key]:.2%})" if key in PREVIEW else ""
-        print(f"  {label:48} {results[label]:8.2%}{hint}")
+    for label, _ in RESULTS[:4]:
+        print(f"  {label:48} {results[label]:8.2%}")
     for label, fmt in RESULTS[4:]:
         v = results[label]
         print(f"  {label:48} " + (f"{v:,.0f}" if fmt == "#,##0" else f"{v:.2f}x"))
