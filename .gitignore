@@ -187,3 +187,20 @@ cython_debug/
 
 # SEC download cache (re-create with scripts/pull_sec.py --refresh)
 data/raw/
+
+# Local caches and databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Scratch and backup files
+*.backup.*
+*.bak
+*~
+.~lock.*
+
+# Local tool config
+CLAUDE.md
+.claude/
+.cursor/
+.cursorrules
